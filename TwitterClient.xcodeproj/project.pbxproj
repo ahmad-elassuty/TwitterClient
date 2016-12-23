@@ -10,6 +10,8 @@
 		20B869FB1E0D7C74001300C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B869FA1E0D7C74001300C9 /* AppDelegate.swift */; };
 		20B86A021E0D7C74001300C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20B86A011E0D7C74001300C9 /* Assets.xcassets */; };
 		20B86A051E0D7C74001300C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B86A031E0D7C74001300C9 /* LaunchScreen.storyboard */; };
+		20B86A131E0D81C2001300C9 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B86A111E0D81C2001300C9 /* LogInViewController.swift */; };
+		20B86A141E0D81C2001300C9 /* LogInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20B86A121E0D81C2001300C9 /* LogInViewController.xib */; };
 		D03B0C58EDAC7C5A06AC4705 /* Pods_TwitterClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC92B38E69007DDA6E75CA8 /* Pods_TwitterClient.framework */; };
 /* End PBXBuildFile section */
 
@@ -20,6 +22,8 @@
 		20B86A011E0D7C74001300C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20B86A041E0D7C74001300C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		20B86A061E0D7C74001300C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20B86A111E0D81C2001300C9 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		20B86A121E0D81C2001300C9 /* LogInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogInViewController.xib; sourceTree = "<group>"; };
 		522717CC646EFDDAC69BD1D8 /* Pods-TwitterClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterClient/Pods-TwitterClient.release.xcconfig"; sourceTree = "<group>"; };
 		6C2DA51C9CA2E229BD962167 /* Pods-TwitterClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterClient/Pods-TwitterClient.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -59,10 +63,29 @@
 			children = (
 				20B869FA1E0D7C74001300C9 /* AppDelegate.swift */,
 				20B86A011E0D7C74001300C9 /* Assets.xcassets */,
-				20B86A031E0D7C74001300C9 /* LaunchScreen.storyboard */,
+				20B86A0F1E0D8164001300C9 /* ViewControllers */,
 				20B86A061E0D7C74001300C9 /* Info.plist */,
+				20B86A031E0D7C74001300C9 /* LaunchScreen.storyboard */,
 			);
 			path = TwitterClient;
+			sourceTree = "<group>";
+		};
+		20B86A0F1E0D8164001300C9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				20B86A101E0D81A0001300C9 /* LogIn */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		20B86A101E0D81A0001300C9 /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				20B86A111E0D81C2001300C9 /* LogInViewController.swift */,
+				20B86A121E0D81C2001300C9 /* LogInViewController.xib */,
+			);
+			name = LogIn;
+			path = Login;
 			sourceTree = "<group>";
 		};
 		5BC33C1EC91B371FC8B97FF6 /* Pods */ = {
@@ -148,6 +171,7 @@
 			files = (
 				20B86A051E0D7C74001300C9 /* LaunchScreen.storyboard in Resources */,
 				20B86A021E0D7C74001300C9 /* Assets.xcassets in Resources */,
+				20B86A141E0D81C2001300C9 /* LogInViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20B86A131E0D81C2001300C9 /* LogInViewController.swift in Sources */,
 				20B869FB1E0D7C74001300C9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
