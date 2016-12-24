@@ -33,6 +33,16 @@ class Account: Object {
         return ["currentAccountKey", "isCurrentAccount"]
     }
     
+    func update(followers: [User]) {
+        let realm = try? Realm()
+        try? realm?.write {
+            realm?.add(followers, update: true)
+            for follower in followers where self.followers.index(of: follower) == nil {
+                self.followers.append(follower)
+            }
+        }
+    }
+    
 }
 
 extension Account {

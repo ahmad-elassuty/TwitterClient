@@ -25,6 +25,7 @@ class FollowerCollectionViewCell: UICollectionViewCell {
         nameLabel.text          = user.name
         bioLabel.text           = user.bio
         screenNameLabel.text    = "@" + user.screenName
+        profileImageView.loadFrom(urlString: user.profileImageURL)
     }
 
 }

@@ -1,5 +1,5 @@
 //
-//  DataSource.swift
+//  Followers+CollectionViewDataSource.swift
 //  TwitterClient
 //
 //  Created by Ahmed Elassuty on 12/24/16.
@@ -15,12 +15,13 @@ extension FollowersViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return dataSource.numberOfFollowers()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cellIdentifier = String(describing: FollowerCollectionViewCell.self)
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! FollowerCollectionViewCell
+        cell.configure(withUser: dataSource[indexPath.item])
         return cell
     }
     

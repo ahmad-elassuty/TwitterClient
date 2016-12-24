@@ -1,5 +1,5 @@
 //
-//  Delegate.swift
+//  Followers+CollectionViewDelegate.swift
 //  TwitterClient
 //
 //  Created by Ahmed Elassuty on 12/24/16.

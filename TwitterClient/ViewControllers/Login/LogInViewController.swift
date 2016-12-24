@@ -55,6 +55,7 @@ class LogInViewController: UIViewController {
                 return
             }
             
+            // Persist the account
             let newAccount = Account(twtrUser: user)
             do {
                 try newAccount.save(update: true)

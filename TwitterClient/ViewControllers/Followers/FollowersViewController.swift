@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class FollowersViewController: UIViewController {
     
@@ -14,9 +15,13 @@ class FollowersViewController: UIViewController {
     
     weak var navigationTitleView: AccountInfoNavigationTitleView!
     
+    var dataSource: FollowersDataSource!
     var currentAccount: Account! {
         didSet {
             navigationTitleView.configure(withAccount: currentAccount)
+            dataSource = FollowersDataSource(account: currentAccount)
+            dataSource.delegate = self
+            dataSource.fetchFollowersIfPossible()
         }
     }
     
