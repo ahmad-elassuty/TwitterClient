@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="wBm-34-Rwq" customClass="FollowerCollectionViewCell" customModule="TwitterClient" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="332" height="101"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="332" height="101"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter-avatar" translatesAutoresizingMaskIntoConstraints="NO" id="G3j-3f-yK2">
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="G3j-3f-yK2" secondAttribute="height" multiplier="1:1" id="5UH-JJ-Hs0"/>
+                            <constraint firstAttribute="width" constant="50" id="fRS-T3-rDf"/>
+                        </constraints>
+                    </imageView>
+                    <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cxg-nc-D78">
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Follower Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZIN-Sg-OEP">
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@screen_name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZC-Ha-iUe">
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZIN-Sg-OEP" firstAttribute="top" secondItem="cxg-nc-D78" secondAttribute="top" id="K2f-uP-maJ"/>
+                            <constraint firstAttribute="trailing" secondItem="lZC-Ha-iUe" secondAttribute="trailing" id="QjO-Hf-xRI"/>
+                            <constraint firstItem="ZIN-Sg-OEP" firstAttribute="leading" secondItem="cxg-nc-D78" secondAttribute="leading" id="SU1-2S-eat"/>
+                            <constraint firstAttribute="trailing" secondItem="ZIN-Sg-OEP" secondAttribute="trailing" id="lCp-kF-Efw"/>
+                            <constraint firstAttribute="bottom" secondItem="lZC-Ha-iUe" secondAttribute="bottom" id="mgA-g2-urL"/>
+                            <constraint firstItem="lZC-Ha-iUe" firstAttribute="leading" secondItem="cxg-nc-D78" secondAttribute="leading" id="pe7-ao-9nt"/>
+                            <constraint firstItem="lZC-Ha-iUe" firstAttribute="top" secondItem="ZIN-Sg-OEP" secondAttribute="bottom" constant="3" id="ysu-b5-zk0"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bio" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKT-aF-eb7">
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="vKT-aF-eb7" secondAttribute="trailing" constant="8" id="Bod-dZ-MhA"/>
+                <constraint firstItem="cxg-nc-D78" firstAttribute="centerY" secondItem="G3j-3f-yK2" secondAttribute="centerY" id="CeK-Sz-I6s"/>
+                <constraint firstItem="vKT-aF-eb7" firstAttribute="top" secondItem="G3j-3f-yK2" secondAttribute="bottom" constant="4" id="Kxa-GH-o7Q"/>
+                <constraint firstItem="G3j-3f-yK2" firstAttribute="leading" secondItem="wBm-34-Rwq" secondAttribute="leading" constant="8" id="QPR-BA-8jQ"/>
+                <constraint firstAttribute="trailing" secondItem="cxg-nc-D78" secondAttribute="trailing" constant="8" id="RGZ-ih-FDl"/>
+                <constraint firstItem="cxg-nc-D78" firstAttribute="leading" secondItem="G3j-3f-yK2" secondAttribute="trailing" constant="8" id="Xx2-h2-wuL"/>
+                <constraint firstItem="G3j-3f-yK2" firstAttribute="top" secondItem="wBm-34-Rwq" secondAttribute="top" constant="8" id="YJR-f6-Ydp"/>
+                <constraint firstItem="vKT-aF-eb7" firstAttribute="leading" secondItem="wBm-34-Rwq" secondAttribute="leading" constant="8" id="bA1-nE-XWV"/>
+                <constraint firstAttribute="bottom" secondItem="vKT-aF-eb7" secondAttribute="bottom" constant="4" id="bZ5-b3-zJf"/>
+            </constraints>
+            <size key="customSize" width="332" height="101"/>
+            <connections>
+                <outlet property="bioLabel" destination="vKT-aF-eb7" id="mFQ-FR-EME"/>
+                <outlet property="nameLabel" destination="ZIN-Sg-OEP" id="ZLX-R5-GvF"/>
+                <outlet property="profileImageView" destination="G3j-3f-yK2" id="Z0j-1E-GiB"/>
+                <outlet property="screenNameLabel" destination="lZC-Ha-iUe" id="GBm-Sx-6K1"/>
+            </connections>
+            <point key="canvasLocation" x="167" y="132"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="twitter-avatar" width="400" height="400"/>
+    </resources>
+</document>

@@ -18,6 +18,7 @@ class FollowersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareNavigationItems()
+        registerCollectionViewCells()
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,4 +38,14 @@ class FollowersViewController: UIViewController {
         // Left Item
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(accountSettings))
     }
+    
+    private func registerCollectionViewCells() {
+        let cells = [FollowerCollectionViewCell.self]
+        cells.forEach { cell in
+            let nibName = String(describing: cell)
+            let nib     = UINib(nibName: nibName, bundle: nil)
+            followersCollectionView.register(nib, forCellWithReuseIdentifier: nibName)
+        }
+    }
+    
 }
