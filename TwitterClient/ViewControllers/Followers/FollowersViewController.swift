@@ -38,11 +38,17 @@ class FollowersViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    func accountSettings() {
-        
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        coordinator.animate(alongsideTransition: { [weak self] context in
+            self?.followersCollectionView.collectionViewLayout.invalidateLayout()
+            }, completion: nil)
     }
     
     // MARK: Private Methods
+    @objc private func accountSettings() {
+        
+    }
+    
     private func prepareNavigationItems() {
         // Title View
         navigationTitleView = AccountInfoNavigationTitleView.loadNib()

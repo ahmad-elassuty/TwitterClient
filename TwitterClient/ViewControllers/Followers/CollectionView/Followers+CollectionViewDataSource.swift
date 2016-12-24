@@ -22,6 +22,11 @@ extension FollowersViewController: UICollectionViewDataSource {
         let cellIdentifier = String(describing: FollowerCollectionViewCell.self)
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! FollowerCollectionViewCell
         cell.configure(withUser: dataSource[indexPath.item])
+        
+        UIView.performWithoutAnimation {
+            cell.layoutIfNeeded()
+        }
+        
         return cell
     }
     
