@@ -17,6 +17,14 @@ class Account: Object {
     dynamic var name            = ""
     let followers               = List<User>()
     
+    convenience init(twtrUser user: TWTRUser) {
+        self.init()
+        id              = user.userID
+        screenName      = user.screenName
+        name            = user.name
+        profileImageURL = user.profileImageLargeURL
+    }
+    
     override static func primaryKey() -> String? {
         return "id"
     }
