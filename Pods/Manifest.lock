@@ -7,6 +7,7 @@ PODS:
   - Realm/Headers (2.0.3)
   - RealmSwift (2.0.3):
     - Realm (= 2.0.3)
+  - TTTAttributedLabel (2.0.0)
   - TwitterCore (2.5.0):
     - Fabric
   - TwitterKit (2.5.0):
@@ -17,6 +18,7 @@ DEPENDENCIES:
   - Kingfisher (~> 3.2)
   - ObjectMapper (~> 2.2)
   - RealmSwift (~> 2.0)
+  - TTTAttributedLabel (= 2.0.0)
   - TwitterKit
 
 SPEC CHECKSUMS:
@@ -25,9 +27,10 @@ SPEC CHECKSUMS:
   ObjectMapper: 41e43e1a89f8060ef5ea5d04ba852e269a621d68
   Realm: 5f008bfe3c8c47142eddfc30b8c1584cde22db24
   RealmSwift: 5afb451f65b682242f272dbb52d5c6f6e343c980
+  TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
   TwitterCore: 95c46af93112768a7983bd370d66023553601d01
   TwitterKit: dd8042698b0ff5bd3066fa919b3b2b50d8eed829
 
-PODFILE CHECKSUM: e0a333f3feb58acb99aff952517fd6a3c97c973d
+PODFILE CHECKSUM: 9452459154e86af25e5346aed8a0cb269e338cbd
 
 COCOAPODS: 1.1.0.rc.2
