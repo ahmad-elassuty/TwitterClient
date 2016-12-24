@@ -14,11 +14,19 @@ class FollowersViewController: UIViewController {
     
     weak var navigationTitleView: AccountInfoNavigationTitleView!
     
+    var currentAccount: Account! {
+        didSet {
+            navigationTitleView.configure(withAccount: currentAccount)
+        }
+    }
+    
     // MARK: Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareNavigationItems()
         registerCollectionViewCells()
+        
+        currentAccount = Account.current!
     }
     
     override func didReceiveMemoryWarning() {
@@ -32,8 +40,7 @@ class FollowersViewController: UIViewController {
     // MARK: Private Methods
     private func prepareNavigationItems() {
         // Title View
-        navigationTitleView      = AccountInfoNavigationTitleView.loadNib()
-        // navigationTitleView.configure(withAccount: currentAccount)
+        navigationTitleView = AccountInfoNavigationTitleView.loadNib()
         navigationItem.titleView = navigationTitleView
         
         // Left Item

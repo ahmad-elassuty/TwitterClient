@@ -28,6 +28,7 @@ class AccountInfoNavigationTitleView: UIView {
     
     func configure(withAccount account: Account) {
         userNameLabel.text = account.name
+        profileImageView.loadFrom(urlString: account.profileImageURL)
     }
     
 }
