@@ -26,6 +26,9 @@
 		20B86A341E0EB952001300C9 /* FollowerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20B86A321E0EB952001300C9 /* FollowerCollectionViewCell.xib */; };
 		20B86A381E0EC23E001300C9 /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B86A371E0EC23E001300C9 /* Delegate.swift */; };
 		20B86A3A1E0EC25C001300C9 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B86A391E0EC25C001300C9 /* DataSource.swift */; };
+		20B86A3C1E0EC645001300C9 /* TWTRAPIClient+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B86A3B1E0EC645001300C9 /* TWTRAPIClient+Utils.swift */; };
+		20B86A3F1E0EC683001300C9 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B86A3E1E0EC683001300C9 /* HttpMethod.swift */; };
+		20B86A411E0EC70F001300C9 /* TwitterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B86A401E0EC70F001300C9 /* TwitterRouter.swift */; };
 		D03B0C58EDAC7C5A06AC4705 /* Pods_TwitterClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC92B38E69007DDA6E75CA8 /* Pods_TwitterClient.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +55,9 @@
 		20B86A321E0EB952001300C9 /* FollowerCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowerCollectionViewCell.xib; sourceTree = "<group>"; };
 		20B86A371E0EC23E001300C9 /* Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
 		20B86A391E0EC25C001300C9 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		20B86A3B1E0EC645001300C9 /* TWTRAPIClient+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TWTRAPIClient+Utils.swift"; sourceTree = "<group>"; };
+		20B86A3E1E0EC683001300C9 /* HttpMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
+		20B86A401E0EC70F001300C9 /* TwitterRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterRouter.swift; sourceTree = "<group>"; };
 		522717CC646EFDDAC69BD1D8 /* Pods-TwitterClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterClient/Pods-TwitterClient.release.xcconfig"; sourceTree = "<group>"; };
 		6C2DA51C9CA2E229BD962167 /* Pods-TwitterClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterClient/Pods-TwitterClient.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +97,7 @@
 			children = (
 				20B869FA1E0D7C74001300C9 /* AppDelegate.swift */,
 				20B86A011E0D7C74001300C9 /* Assets.xcassets */,
+				20B86A3D1E0EC66D001300C9 /* Helpers */,
 				20B86A2C1E0EB4C6001300C9 /* Models */,
 				20B86A251E0EA189001300C9 /* Extensions */,
 				20B86A0F1E0D8164001300C9 /* ViewControllers */,
@@ -165,6 +172,7 @@
 			children = (
 				20B86A261E0EA1C3001300C9 /* UIView+Round.swift */,
 				20B86A2A1E0EAB55001300C9 /* UIColor+App.swift */,
+				20B86A3B1E0EC645001300C9 /* TWTRAPIClient+Utils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -176,6 +184,15 @@
 				20B86A2F1E0EB638001300C9 /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		20B86A3D1E0EC66D001300C9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				20B86A3E1E0EC683001300C9 /* HttpMethod.swift */,
+				20B86A401E0EC70F001300C9 /* TwitterRouter.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		5BC33C1EC91B371FC8B97FF6 /* Pods */ = {
@@ -336,10 +353,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20B86A3C1E0EC645001300C9 /* TWTRAPIClient+Utils.swift in Sources */,
 				20B86A381E0EC23E001300C9 /* Delegate.swift in Sources */,
+				20B86A411E0EC70F001300C9 /* TwitterRouter.swift in Sources */,
 				20B86A181E0D9299001300C9 /* FollowersViewController.swift in Sources */,
 				20B86A201E0E997F001300C9 /* AccountInfoNavigationTitleView.swift in Sources */,
 				20B86A3A1E0EC25C001300C9 /* DataSource.swift in Sources */,
+				20B86A3F1E0EC683001300C9 /* HttpMethod.swift in Sources */,
 				20B86A291E0EA91E001300C9 /* FollowersNavigationController.swift in Sources */,
 				20B86A271E0EA1C3001300C9 /* UIView+Round.swift in Sources */,
 				20B86A241E0E9F0E001300C9 /* FollowersNavigationBar.swift in Sources */,

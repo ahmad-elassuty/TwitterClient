@@ -26,4 +26,8 @@ class AccountInfoNavigationTitleView: UIView {
                                borderWidth: 2, borderColor: .white)
     }
     
+    func configure(withAccount account: Account) {
+        userNameLabel.text = account.name
+    }
+    
 }

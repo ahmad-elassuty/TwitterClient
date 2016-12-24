@@ -9,7 +9,7 @@
 import ObjectMapper
 import RealmSwift
 
-class User: Object {
+class User: Object, Mappable {
     
     dynamic var id                              = ""
     dynamic var name                            = ""
@@ -18,6 +18,10 @@ class User: Object {
     dynamic var backgroundImageURL              = ""
     dynamic var bio                 : String?
     dynamic var recentTweets        : Data?
+    
+    required convenience init?(map: Map) {
+        self.init()
+    }
     
     func mapping(map: Map) {
         id                  <- map["id_str"]
