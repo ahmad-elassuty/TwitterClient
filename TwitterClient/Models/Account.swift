@@ -30,10 +30,19 @@ class Account: Object {
     }
     
     override static func ignoredProperties() -> [String] {
-        return ["currentAccountKey", "isCurrentAccount"]
+        return ["isCurrentAccount", "followersNextCursor"]
     }
     
-    func update(followers: [User]) {
+    func replaceFollowers(with followers: [User]) {
+        let realm = try? Realm()
+        try? realm?.write {
+            realm?.delete(self.followers)
+            self.followers.removeAll()
+            self.followers.append(objectsIn: followers)
+        }
+    }
+    
+    func createOrUpdate(followers: [User]) {
         let realm = try? Realm()
         try? realm?.write {
             realm?.add(followers, update: true)
@@ -51,6 +60,10 @@ extension Account {
         return "currentAccountId"
     }
     
+    var followersNextCursorKey: String {
+        return "\(id):" + "followersNextCursor"
+    }
+    
     var isCurrentAccount: Bool {
         get {
             let currentAccount = UserDefaults.standard.string(forKey: Account.currentAccountKey)
@@ -60,6 +73,15 @@ extension Account {
             if newValue {
                 UserDefaults.standard.set(id, forKey: Account.currentAccountKey)
             }
+        }
+    }
+    
+    var followersNextCursor: String {
+        get {
+            return UserDefaults.standard.string(forKey: followersNextCursorKey) ?? "-1"
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: followersNextCursorKey)
         }
     }
     

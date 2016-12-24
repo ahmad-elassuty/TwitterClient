@@ -11,27 +11,29 @@ import TwitterKit
 
 extension TWTRAPIClient {
     
-    typealias TWTRFollowersCompletion   = ([User]?, Error?) -> ()
+    typealias TWTRFollowersCompletion   = ([User]?, String?, Error?) -> ()
     typealias TWTRTimelineCompletion    = (Data?, Error?)   -> ()
     
-    func followers(ofUserWithID id: String, limit: Int = 10, completion: @escaping TWTRFollowersCompletion) {
+    func followers(ofUserWithID id: String, limit: Int = 20, nextCursor: String = "-1", completion: @escaping TWTRFollowersCompletion) {
         var error: NSError?
         let count = String(describing: limit)
-        let params = ["id": id, "count": count, "skip_status": "true"]
+        let params = ["id": id, "count": count, "skip_status": "true", "cursor": nextCursor]
         
         // Prepare Twitter Request
         let request = urlRequest(withMethod: HTTPMethod.get.rawValue, url: TwitterRouter.followersList, parameters: params, error: &error)
         sendTwitterRequest(request) { (response, data, error) in
             var followers: [User]?
+            var nextCursorStr: String?
             
             if let data = data {
                 let serializedJSON  = try? JSONSerialization.jsonObject(with: data, options: [])
                 let castedJSON      = serializedJSON as? [String: Any]
                 let users           = castedJSON?["users"]
+                nextCursorStr       = castedJSON?["next_cursor_str"] as? String
                 followers           = Mapper<User>().mapArray(JSONObject: users)
             }
             
-            completion(followers, error)
+            completion(followers, nextCursorStr, error)
         }
     }
     

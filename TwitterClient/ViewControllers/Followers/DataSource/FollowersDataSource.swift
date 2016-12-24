@@ -13,17 +13,22 @@ class FollowersDataSource {
     
     weak var delegate: FollowersDataSourceDelegate?
     
-    private var account: Account!
-    private var data: List<User>!
-    private var notificationToken: NotificationToken!
+    private var account             : Account!
+    private var data                : List<User>!
+    private var nextCursor          : String?
+    private var notificationToken   : NotificationToken!
+    
+    var numberOfFollowers: Int {
+        return data.count
+    }
     
     init(account: Account) {
         set(account: account)
     }
     
     func set(account: Account) {
-        self.account = account
-        data = account.followers
+        self.account    = account
+        data            = account.followers
         notificationToken = data.addNotificationBlock { [weak self] changes in
             switch changes {
             case .error(let error):
@@ -32,27 +37,48 @@ class FollowersDataSource {
                 self?.delegate?.dataSourceDidUpdate()
             }
         }
+        nextCursor = account.followersNextCursor
     }
     
     subscript(index: Int) -> User {
         return data[index]
     }
     
-    func numberOfFollowers() -> Int {
-        return data.count
+    func reloadFollowersIfPossible() {
+        fetchFromTwitter { [weak self] followers in
+            self?.account.replaceFollowers(with: followers)
+        }
     }
     
-    func fetchFollowersIfPossible() {
-        let client = TWTRAPIClient(userID: account.id)
-        client.followers(ofUserWithID: account.id) { [weak self] followers, error in
+    func loadNextFollowersPageIfPossible() {
+        guard let nextCursor = nextCursor, nextCursor != "0" else {
+            return
+        }
+        
+        fetchFromTwitter(cursor: nextCursor) { [weak self] followers in
+            self?.account.createOrUpdate(followers: followers)
+        }
+    }
+    
+    private func fetchFromTwitter(cursor: String = "-1", completion: @escaping ([User]) -> ()) {
+        let userID = account.id
+        let client = TWTRAPIClient(userID: userID)
+        
+        client.followers(ofUserWithID: userID, limit: 4, nextCursor: cursor) { [weak self] followers, nextCursor, error in
+            guard let `self` = self else {
+                return
+            }
+            
             if let followers = followers {
-                self?.account.update(followers: followers)
-                self?.delegate?.dataSourceDidUpdate()
+                completion(followers)
+                self.delegate?.dataSourceDidUpdate()
+                self.nextCursor = nextCursor
+                self.account.followersNextCursor = nextCursor ?? "-1"
                 return
             }
             
             // Error
-            self?.delegate?.dataSource(error: error!)
+            self.delegate?.dataSource(error: error!)
         }
     }
     

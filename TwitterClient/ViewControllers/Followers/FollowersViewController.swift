@@ -21,7 +21,7 @@ class FollowersViewController: UIViewController {
             navigationTitleView.configure(withAccount: currentAccount)
             dataSource = FollowersDataSource(account: currentAccount)
             dataSource.delegate = self
-            dataSource.fetchFollowersIfPossible()
+            dataSource.reloadFollowersIfPossible()
         }
     }
     
@@ -29,7 +29,7 @@ class FollowersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareNavigationItems()
-        registerCollectionViewCells()
+        configureCollectionView()
         
         currentAccount = Account.current!
     }
@@ -46,7 +46,11 @@ class FollowersViewController: UIViewController {
     
     // MARK: Private Methods
     @objc private func accountSettings() {
-        
+    }
+    
+    private func configureCollectionView() {
+        registerCollectionViewCells()
+        addRefreshControl()
     }
     
     private func prepareNavigationItems() {
@@ -65,6 +69,16 @@ class FollowersViewController: UIViewController {
             let nib     = UINib(nibName: nibName, bundle: nil)
             followersCollectionView.register(nib, forCellWithReuseIdentifier: nibName)
         }
+    }
+    
+    private func addRefreshControl(){
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        followersCollectionView.refreshControl = refreshControl
+    }
+    
+    @objc private func refresh() {
+        dataSource.reloadFollowersIfPossible()
     }
     
 }
