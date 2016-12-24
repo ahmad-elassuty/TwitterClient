@@ -5,5 +5,7 @@ target 'TwitterClient' do
 
   pod 'Fabric'
   pod 'TwitterKit'
+  pod 'ObjectMapper', '~> 2.2'
+  pod 'RealmSwift', '~> 2.0'
 
 end
