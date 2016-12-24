@@ -8,6 +8,7 @@
 
 import UIKit
 import TwitterKit
+import RealmSwift
 
 class LogInViewController: UIViewController {
     
@@ -19,7 +20,7 @@ class LogInViewController: UIViewController {
             guard let session = session else {
                 // LogIn Error
                 if let error = error {
-                    self.onFailure(error)
+                    self.onFailure(error.localizedDescription)
                 }
                 return
             }
@@ -44,12 +45,35 @@ class LogInViewController: UIViewController {
     
     // MARK: Private Methods
     fileprivate func onSuccess(_ session: TWTRSession) {
-        
+        logInButton.isEnabled = false
+        // Fetch user data
+        let userID = session.userID
+        let client = TWTRAPIClient(userID: userID)
+        client.loadUser(withID: userID) { [weak self] user, error in
+            guard let user = user else {
+                self?.onFailure(error!.localizedDescription)
+                return
+            }
+            
+            let newAccount = Account(twtrUser: user)
+            do {
+                try newAccount.save(update: true)
+            } catch let error {
+                print(error.localizedDescription)
+                self?.onFailure("Error")
+                return
+            }
+            newAccount.isCurrentAccount = true
+            
+            // Go to FollowersViewController
+            let viewController = FollowersNavigationController(navigationBarClass: FollowersNavigationBar.self, toolbarClass: nil)
+            self?.goTo(viewController: viewController)
+        }
     }
     
-    fileprivate func onFailure(_ error: Error) {
+    fileprivate func onFailure(_ errorMessage: String) {
         let alert = UIAlertController(title: "Error",
-                                      message: error.localizedDescription,
+                                      message: errorMessage,
                                       preferredStyle: .alert)
         let retryAction = UIAlertAction(title: "Retry", style: .default) { _ in
             self.logInButton.isEnabled = false
@@ -62,6 +86,15 @@ class LogInViewController: UIViewController {
         alert.addAction(cancelAction)
         alert.addAction(retryAction)
         present(alert, animated: true, completion: nil)
+    }
+    
+    fileprivate func goTo(viewController: UIViewController) {
+        let window = UIApplication.shared.keyWindow
+        UIView.transition(with: window!, duration: 0.5, options: [.transitionCrossDissolve], animations: {
+            UIView.setAnimationsEnabled(false)
+            window?.rootViewController = viewController
+            UIView.setAnimationsEnabled(true)
+            }, completion: nil)
     }
     
 }
