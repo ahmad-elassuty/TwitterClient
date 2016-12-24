@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view opaque="NO" contentMode="scaleToFill" id="iN0-l3-epB" customClass="AccountInfoNavigationTitleView" customModule="TwitterClient" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="364" height="147"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter-avatar" translatesAutoresizingMaskIntoConstraints="NO" id="gKb-pa-d8H">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="7dh-Yb-REY"/>
+                        <constraint firstAttribute="width" secondItem="gKb-pa-d8H" secondAttribute="height" id="Xhh-r7-3hu"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQa-4D-PDW">
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="UQa-4D-PDW" firstAttribute="centerX" secondItem="gKb-pa-d8H" secondAttribute="centerX" id="PTC-Xe-OIw"/>
+                <constraint firstItem="UQa-4D-PDW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="YCA-Yg-sxl"/>
+                <constraint firstItem="gKb-pa-d8H" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="kTF-u6-HuT"/>
+                <constraint firstItem="UQa-4D-PDW" firstAttribute="top" secondItem="gKb-pa-d8H" secondAttribute="bottom" constant="4" id="klR-hu-JCR"/>
+                <constraint firstAttribute="trailing" secondItem="UQa-4D-PDW" secondAttribute="trailing" id="u9i-s0-CaI"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="profileImageView" destination="gKb-pa-d8H" id="ik3-c4-Kvb"/>
+                <outlet property="profileImageWidthConstraint" destination="7dh-Yb-REY" id="g6V-BP-I3N"/>
+                <outlet property="userNameLabel" destination="UQa-4D-PDW" id="jay-7x-CxK"/>
+            </connections>
+            <point key="canvasLocation" x="28" y="-129.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="twitter-avatar" width="400" height="400"/>
+    </resources>
+</document>
