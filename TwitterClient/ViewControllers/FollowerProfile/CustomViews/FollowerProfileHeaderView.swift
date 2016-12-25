@@ -15,7 +15,7 @@ class FollowerProfileHeaderView: UIView {
     @IBOutlet weak var backgroundImageView      : UIImageView!
     @IBOutlet weak var backgroundOverlay        : UIView!
     
-    @IBInspectable var minHeight                : CGFloat      = 80
+    @IBInspectable var minHeight                : CGFloat      = 100
     
     override func awakeFromNib() {
         super.awakeFromNib()

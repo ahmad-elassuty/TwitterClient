@@ -28,31 +28,22 @@ class TimelineDataSource {
     init(user: User) {
         self.user = user
         data = []
-        data = serializeUser(timeline: user.timeline) ?? data
-        reloadTimelineIfPossible()
+        data = serializeUser(timeline: user.timeline as Data?) ?? data
     }
     
     subscript(index: Int) -> TWTRTweet {
         return data[index]
     }
     
-    private func serializeUser(timeline: Data?) -> [TWTRTweet]? {
-        if let timeline = timeline {
-            let json        = try? JSONSerialization.jsonObject(with: timeline, options: [])
-            let JSONArray  = json as? [Any]
-            return TWTRTweet.tweets(withJSONArray: JSONArray) as? [TWTRTweet]
-        }
-        return nil
-    }
-    
-    private func reloadTimelineIfPossible() {
+    // MARK: Methods
+    func reloadTimelineIfPossible() {
         let client = TWTRAPIClient(userID: Account.current!.id)
-        client.loadTimeline(ofUserWithID: user.id, count: "10") { [weak self] (timeline, error) in
-            // Serialize received timeline
+        client.loadTimeline(ofUserWithID: user.id) { [weak self] (timeline, error) in
             guard let `self` = self else {
                 return
             }
             
+            // Serialize received timeline
             guard let timeline = timeline, let serializedTimeline = self.serializeUser(timeline: timeline) else {
                 // Error
                 if let error = error {
@@ -63,13 +54,23 @@ class TimelineDataSource {
             
             // Update user cached timeline
             let realm = try? Realm()
-            try? realm?.write {
-                self.user.timeline = timeline
+            try! realm?.write {
+                self.user.timeline = timeline as NSData?
             }
             
             // Update view data
             self.data = serializedTimeline
         }
+    }
+    
+    // MARK: Private Methods
+    private func serializeUser(timeline: Data?) -> [TWTRTweet]? {
+        if let timeline = timeline {
+            let json        = try? JSONSerialization.jsonObject(with: timeline, options: [])
+            let JSONArray  = json as? [Any]
+            return TWTRTweet.tweets(withJSONArray: JSONArray) as? [TWTRTweet]
+        }
+        return nil
     }
     
 }

@@ -37,7 +37,6 @@ class Account: Object {
         let realm = try? Realm()
         try? realm?.write {
             realm?.delete(self.followers)
-            self.followers.removeAll()
             self.followers.append(objectsIn: followers)
         }
     }

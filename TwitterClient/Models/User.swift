@@ -17,7 +17,7 @@ class User: Object, Mappable {
     dynamic var profileImageURL                 = ""
     dynamic var backgroundImageURL              = ""
     dynamic var bio                 : String?
-    dynamic var timeline            : Data?
+    dynamic var timeline            : NSData?
     
     required convenience init?(map: Map) {
         self.init()

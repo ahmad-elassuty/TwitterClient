@@ -29,7 +29,7 @@
             <constraints>
                 <constraint firstItem="UQa-4D-PDW" firstAttribute="centerX" secondItem="gKb-pa-d8H" secondAttribute="centerX" id="PTC-Xe-OIw"/>
                 <constraint firstItem="UQa-4D-PDW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="YCA-Yg-sxl"/>
-                <constraint firstItem="gKb-pa-d8H" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="kTF-u6-HuT"/>
+                <constraint firstItem="gKb-pa-d8H" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="kTF-u6-HuT"/>
                 <constraint firstItem="UQa-4D-PDW" firstAttribute="top" secondItem="gKb-pa-d8H" secondAttribute="bottom" constant="4" id="klR-hu-JCR"/>
                 <constraint firstAttribute="trailing" secondItem="UQa-4D-PDW" secondAttribute="trailing" id="u9i-s0-CaI"/>
             </constraints>

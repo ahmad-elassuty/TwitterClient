@@ -34,6 +34,11 @@ class FollowersViewController: UIViewController {
         currentAccount = Account.current!
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        followersCollectionView.collectionViewLayout.invalidateLayout()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -62,7 +67,9 @@ class FollowersViewController: UIViewController {
         navigationItem.titleView    = navigationTitleView
         
         // Left Item
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(accountSettings))
+        let image = UIImage(named: "menu")!.withRenderingMode(.alwaysOriginal)
+        let leftBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(accountSettings))
+        navigationItem.leftBarButtonItem = leftBarButtonItem
     }
     
     private func registerCollectionViewCells() {

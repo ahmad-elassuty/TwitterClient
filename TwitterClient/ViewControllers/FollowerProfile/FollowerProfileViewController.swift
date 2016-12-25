@@ -31,19 +31,32 @@ class FollowerProfileViewController: UIViewController {
     // MARK: Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        dataSource          = TimelineDataSource(user: follower)
+        dataSource.delegate = self
         headerView.configure(with: follower)
         configureTableView()
-        dataSource = TimelineDataSource(user: follower)
-        dataSource.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        dataSource.reloadTimelineIfPossible()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    override var prefersStatusBarHidden: Bool {
-        return true
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    // MARK: Actions
+    @IBAction func close() {
+        dismiss(animated: true, completion: nil)
     }
     
     // MARK: Private Methods

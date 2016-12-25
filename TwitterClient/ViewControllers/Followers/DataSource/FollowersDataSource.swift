@@ -66,7 +66,7 @@ class FollowersDataSource {
         isFetching = true
         
         let client = TWTRAPIClient(userID: userID)
-        client.loadFollowers(ofUserWithID: userID, count: "6", cursor: cursor) { [weak self] followers, nextCursor, error in
+        client.loadFollowers(ofUserWithID: userID, cursor: cursor) { [weak self] followers, nextCursor, error in
             defer {
                 self?.isFetching = false
             }

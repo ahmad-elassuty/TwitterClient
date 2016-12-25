@@ -56,7 +56,7 @@
                                         <constraint firstAttribute="width" secondItem="wQY-uk-OLo" secondAttribute="height" multiplier="1:1" id="ZvK-Ci-UKa"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4aK-hp-gta">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4aK-hp-gta">
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
@@ -69,24 +69,38 @@
                                 <constraint firstItem="4aK-hp-gta" firstAttribute="centerY" secondItem="wQY-uk-OLo" secondAttribute="centerY" id="HfW-5Q-aVy"/>
                                 <constraint firstItem="4aK-hp-gta" firstAttribute="leading" secondItem="wQY-uk-OLo" secondAttribute="trailing" constant="8" id="HzV-es-dkf"/>
                                 <constraint firstItem="wQY-uk-OLo" firstAttribute="leading" secondItem="yEk-Rp-gtF" secondAttribute="leading" constant="8" id="qUK-sg-hCa"/>
-                                <constraint firstAttribute="trailing" secondItem="4aK-hp-gta" secondAttribute="trailing" id="rBB-mc-KjG"/>
+                                <constraint firstAttribute="trailing" secondItem="4aK-hp-gta" secondAttribute="trailing" constant="50" id="rBB-mc-KjG"/>
                             </constraints>
                         </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RKN-Va-qS6">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="80" id="VtE-e7-W7O"/>
+                            </constraints>
+                            <state key="normal" image="Close">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="close" destination="-1" eventType="touchUpInside" id="8wz-WL-bfY"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="LLF-Xk-Erg" secondAttribute="bottom" id="4Je-Qk-DvT"/>
                         <constraint firstAttribute="height" constant="200" id="8Jc-Gb-g0b"/>
+                        <constraint firstItem="RKN-Va-qS6" firstAttribute="leading" secondItem="4aK-hp-gta" secondAttribute="trailing" id="8wt-JW-Pw4"/>
                         <constraint firstAttribute="trailing" secondItem="LLF-Xk-Erg" secondAttribute="trailing" id="LEU-7E-olT"/>
                         <constraint firstAttribute="trailing" secondItem="yEk-Rp-gtF" secondAttribute="trailing" id="THW-FV-1Rj"/>
+                        <constraint firstAttribute="trailing" secondItem="RKN-Va-qS6" secondAttribute="trailing" id="Uag-6s-zT9"/>
                         <constraint firstAttribute="bottom" secondItem="yEk-Rp-gtF" secondAttribute="bottom" id="aSS-xR-5yu"/>
                         <constraint firstItem="LLF-Xk-Erg" firstAttribute="top" secondItem="mbq-Te-AJW" secondAttribute="top" id="agU-vt-0qp"/>
+                        <constraint firstItem="RKN-Va-qS6" firstAttribute="top" secondItem="mbq-Te-AJW" secondAttribute="top" constant="20" id="ug4-XD-fHB"/>
                         <constraint firstItem="yEk-Rp-gtF" firstAttribute="leading" secondItem="mbq-Te-AJW" secondAttribute="leading" id="xhD-KL-pqk"/>
                         <constraint firstItem="LLF-Xk-Erg" firstAttribute="leading" secondItem="mbq-Te-AJW" secondAttribute="leading" id="xw6-g3-FMg"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="minHeight">
-                            <real key="value" value="80"/>
+                            <real key="value" value="100"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
@@ -107,11 +121,12 @@
                 <constraint firstAttribute="trailing" secondItem="0dr-ap-vXu" secondAttribute="trailing" id="n9C-mE-Zaj"/>
                 <constraint firstItem="mbq-Te-AJW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="uln-Md-VOS"/>
             </constraints>
-            <nil key="simulatedStatusBarMetrics"/>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
             <point key="canvasLocation" x="33.5" y="130.5"/>
         </view>
     </objects>
     <resources>
+        <image name="Close" width="24" height="24"/>
         <image name="Default-background" width="570" height="108"/>
         <image name="twitter-avatar" width="400" height="400"/>
     </resources>
