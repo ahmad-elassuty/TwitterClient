@@ -72,8 +72,8 @@ class FollowersDataSource {
             if let followers = followers {
                 completion(followers)
                 self.delegate?.dataSourceDidUpdate()
-                self.nextCursor = nextCursor
-                self.account.followersNextCursor = nextCursor ?? "-1"
+                self.nextCursor = nextCursor!
+                self.account.followersNextCursor = nextCursor!
                 return
             }
             
