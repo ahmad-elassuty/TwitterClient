@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20AA85571E0FEA4700A36429 /* FollowerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AA85551E0FEA4700A36429 /* FollowerProfileViewController.swift */; };
+		20AA85581E0FEA4700A36429 /* FollowerProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20AA85561E0FEA4700A36429 /* FollowerProfileViewController.xib */; };
+		20AA855D1E0FED5B00A36429 /* FollowerProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AA855C1E0FED5B00A36429 /* FollowerProfileHeaderView.swift */; };
+		20AA85611E0FF2D300A36429 /* FollowersProfile+TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AA85601E0FF2D300A36429 /* FollowersProfile+TableViewDelegate.swift */; };
+		20AA85631E0FF2F300A36429 /* FollowerProfile+TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AA85621E0FF2F300A36429 /* FollowerProfile+TableViewDataSource.swift */; };
 		20B869FB1E0D7C74001300C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B869FA1E0D7C74001300C9 /* AppDelegate.swift */; };
 		20B86A021E0D7C74001300C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20B86A011E0D7C74001300C9 /* Assets.xcassets */; };
 		20B86A051E0D7C74001300C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B86A031E0D7C74001300C9 /* LaunchScreen.storyboard */; };
@@ -40,6 +45,11 @@
 
 /* Begin PBXFileReference section */
 		1AC92B38E69007DDA6E75CA8 /* Pods_TwitterClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwitterClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		20AA85551E0FEA4700A36429 /* FollowerProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerProfileViewController.swift; sourceTree = "<group>"; };
+		20AA85561E0FEA4700A36429 /* FollowerProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowerProfileViewController.xib; sourceTree = "<group>"; };
+		20AA855C1E0FED5B00A36429 /* FollowerProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerProfileHeaderView.swift; sourceTree = "<group>"; };
+		20AA85601E0FF2D300A36429 /* FollowersProfile+TableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FollowersProfile+TableViewDelegate.swift"; sourceTree = "<group>"; };
+		20AA85621E0FF2F300A36429 /* FollowerProfile+TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FollowerProfile+TableViewDataSource.swift"; sourceTree = "<group>"; };
 		20B869F71E0D7C74001300C9 /* TwitterClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20B869FA1E0D7C74001300C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20B86A011E0D7C74001300C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -86,6 +96,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20AA85541E0FE9E700A36429 /* FollowerProfile */ = {
+			isa = PBXGroup;
+			children = (
+				20AA855B1E0FEC4900A36429 /* CustomViews */,
+				20AA855A1E0FEC4300A36429 /* TableView */,
+				20AA85551E0FEA4700A36429 /* FollowerProfileViewController.swift */,
+				20AA85561E0FEA4700A36429 /* FollowerProfileViewController.xib */,
+			);
+			path = FollowerProfile;
+			sourceTree = "<group>";
+		};
+		20AA855A1E0FEC4300A36429 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				20AA85601E0FF2D300A36429 /* FollowersProfile+TableViewDelegate.swift */,
+				20AA85621E0FF2F300A36429 /* FollowerProfile+TableViewDataSource.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		20AA855B1E0FEC4900A36429 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				20AA855C1E0FED5B00A36429 /* FollowerProfileHeaderView.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
 		20B869EE1E0D7C74001300C9 = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +160,7 @@
 		20B86A0F1E0D8164001300C9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				20AA85541E0FE9E700A36429 /* FollowerProfile */,
 				20B86A151E0D9254001300C9 /* Followers */,
 				20B86A101E0D81A0001300C9 /* LogIn */,
 			);
@@ -306,6 +345,7 @@
 				20B86A191E0D9299001300C9 /* FollowersViewController.xib in Resources */,
 				20B86A051E0D7C74001300C9 /* LaunchScreen.storyboard in Resources */,
 				20B86A021E0D7C74001300C9 /* Assets.xcassets in Resources */,
+				20AA85581E0FEA4700A36429 /* FollowerProfileViewController.xib in Resources */,
 				20B86A221E0E99A1001300C9 /* AccountInfoNavigationTitleView.xib in Resources */,
 				20B86A141E0D81C2001300C9 /* LogInViewController.xib in Resources */,
 			);
@@ -380,6 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20B86A3C1E0EC645001300C9 /* TWTRAPIClient+Utils.swift in Sources */,
+				20AA855D1E0FED5B00A36429 /* FollowerProfileHeaderView.swift in Sources */,
 				20B86A551E0F1211001300C9 /* Followers+FollowersDataSourceDelegate.swift in Sources */,
 				20B86A381E0EC23E001300C9 /* Followers+CollectionViewDelegate.swift in Sources */,
 				20B86A411E0EC70F001300C9 /* TwitterRouter.swift in Sources */,
@@ -389,16 +430,19 @@
 				20B86A3F1E0EC683001300C9 /* HttpMethod.swift in Sources */,
 				20B86A291E0EA91E001300C9 /* FollowersNavigationController.swift in Sources */,
 				20B86A4F1E0EF086001300C9 /* FollowersDataSource.swift in Sources */,
+				20AA85571E0FEA4700A36429 /* FollowerProfileViewController.swift in Sources */,
 				20B86A511E0EF10B001300C9 /* FollowersDataSourceDelegate.swift in Sources */,
 				20B86A271E0EA1C3001300C9 /* UIView+Round.swift in Sources */,
 				20B86A241E0E9F0E001300C9 /* FollowersNavigationBar.swift in Sources */,
 				20B86A451E0ECE41001300C9 /* RealmObject+Utils.swift in Sources */,
+				20AA85631E0FF2F300A36429 /* FollowerProfile+TableViewDataSource.swift in Sources */,
 				20B86A2E1E0EB4E9001300C9 /* Account.swift in Sources */,
 				20B86A2B1E0EAB55001300C9 /* UIColor+App.swift in Sources */,
 				20B86A131E0D81C2001300C9 /* LogInViewController.swift in Sources */,
 				20B86A331E0EB952001300C9 /* FollowerCollectionViewCell.swift in Sources */,
 				20B86A301E0EB638001300C9 /* User.swift in Sources */,
 				20B869FB1E0D7C74001300C9 /* AppDelegate.swift in Sources */,
+				20AA85611E0FF2D300A36429 /* FollowersProfile+TableViewDelegate.swift in Sources */,
 				20B86A571E0F14C4001300C9 /* SizeCalculator.swift in Sources */,
 				20B86A491E0EE12F001300C9 /* UIImageView+AsyncLoad.swift in Sources */,
 			);

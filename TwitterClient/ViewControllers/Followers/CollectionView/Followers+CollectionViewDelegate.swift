@@ -11,7 +11,9 @@ import UIKit
 extension FollowersViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Selected")
+        let follower = dataSource[indexPath.item]
+        let followerProfileViewController = FollowerProfileViewController(for: follower)
+        present(followerProfileViewController, animated: true, completion: nil)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

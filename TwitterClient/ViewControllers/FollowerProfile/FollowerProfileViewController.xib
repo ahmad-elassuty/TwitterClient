@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FollowerProfileViewController" customModule="TwitterClient" customModuleProvider="target">
+            <connections>
+                <outlet property="headerView" destination="mbq-Te-AJW" id="Hba-bu-Q26"/>
+                <outlet property="headerViewHeightConstraint" destination="8Jc-Gb-g0b" id="397-fO-m0L"/>
+                <outlet property="tweetsTableView" destination="0dr-ap-vXu" id="gsG-e8-xw4"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0dr-ap-vXu">
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mbq-Te-AJW" customClass="FollowerProfileHeaderView" customModule="TwitterClient" customModuleProvider="target">
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LLF-Xk-Erg">
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Default-background" translatesAutoresizingMaskIntoConstraints="NO" id="RGQ-qD-xVD"/>
+                                <view alpha="0.40000000596046448" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NMI-t8-495">
+                                    <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="RGQ-qD-xVD" secondAttribute="bottom" id="2Bs-43-PPX"/>
+                                <constraint firstAttribute="trailing" secondItem="NMI-t8-495" secondAttribute="trailing" id="AxC-dN-Tgx"/>
+                                <constraint firstItem="RGQ-qD-xVD" firstAttribute="leading" secondItem="LLF-Xk-Erg" secondAttribute="leading" id="BqF-wP-afh"/>
+                                <constraint firstItem="RGQ-qD-xVD" firstAttribute="top" secondItem="LLF-Xk-Erg" secondAttribute="top" id="Pjv-k4-oiT"/>
+                                <constraint firstItem="NMI-t8-495" firstAttribute="top" secondItem="LLF-Xk-Erg" secondAttribute="top" id="REN-vZ-stt"/>
+                                <constraint firstItem="NMI-t8-495" firstAttribute="leading" secondItem="LLF-Xk-Erg" secondAttribute="leading" id="eZp-Wg-icF"/>
+                                <constraint firstAttribute="bottom" secondItem="NMI-t8-495" secondAttribute="bottom" id="f4g-3K-qLz"/>
+                                <constraint firstAttribute="trailing" secondItem="RGQ-qD-xVD" secondAttribute="trailing" id="se1-u1-Hvi"/>
+                            </constraints>
+                        </view>
+                        <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yEk-Rp-gtF">
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter-avatar" translatesAutoresizingMaskIntoConstraints="NO" id="wQY-uk-OLo">
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="70" id="JCE-U6-E8N"/>
+                                        <constraint firstAttribute="width" secondItem="wQY-uk-OLo" secondAttribute="height" multiplier="1:1" id="ZvK-Ci-UKa"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4aK-hp-gta">
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="wQY-uk-OLo" firstAttribute="centerY" secondItem="yEk-Rp-gtF" secondAttribute="centerY" id="3mJ-pP-9DU"/>
+                                <constraint firstAttribute="height" constant="80" id="BdH-Zj-K9d"/>
+                                <constraint firstItem="4aK-hp-gta" firstAttribute="centerY" secondItem="wQY-uk-OLo" secondAttribute="centerY" id="HfW-5Q-aVy"/>
+                                <constraint firstItem="4aK-hp-gta" firstAttribute="leading" secondItem="wQY-uk-OLo" secondAttribute="trailing" constant="8" id="HzV-es-dkf"/>
+                                <constraint firstItem="wQY-uk-OLo" firstAttribute="leading" secondItem="yEk-Rp-gtF" secondAttribute="leading" constant="8" id="qUK-sg-hCa"/>
+                                <constraint firstAttribute="trailing" secondItem="4aK-hp-gta" secondAttribute="trailing" id="rBB-mc-KjG"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="LLF-Xk-Erg" secondAttribute="bottom" id="4Je-Qk-DvT"/>
+                        <constraint firstAttribute="height" constant="200" id="8Jc-Gb-g0b"/>
+                        <constraint firstAttribute="trailing" secondItem="LLF-Xk-Erg" secondAttribute="trailing" id="LEU-7E-olT"/>
+                        <constraint firstAttribute="trailing" secondItem="yEk-Rp-gtF" secondAttribute="trailing" id="THW-FV-1Rj"/>
+                        <constraint firstAttribute="bottom" secondItem="yEk-Rp-gtF" secondAttribute="bottom" id="aSS-xR-5yu"/>
+                        <constraint firstItem="LLF-Xk-Erg" firstAttribute="top" secondItem="mbq-Te-AJW" secondAttribute="top" id="agU-vt-0qp"/>
+                        <constraint firstItem="yEk-Rp-gtF" firstAttribute="leading" secondItem="mbq-Te-AJW" secondAttribute="leading" id="xhD-KL-pqk"/>
+                        <constraint firstItem="LLF-Xk-Erg" firstAttribute="leading" secondItem="mbq-Te-AJW" secondAttribute="leading" id="xw6-g3-FMg"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="RGQ-qD-xVD" id="hqn-ia-gJN"/>
+                        <outlet property="profileImageView" destination="wQY-uk-OLo" id="lzt-xf-449"/>
+                        <outlet property="profileNameLabel" destination="4aK-hp-gta" id="1qA-Eu-223"/>
+                    </connections>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="0dr-ap-vXu" secondAttribute="bottom" id="N03-EZ-7xx"/>
+                <constraint firstItem="mbq-Te-AJW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PCV-la-W0D"/>
+                <constraint firstItem="0dr-ap-vXu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="PHp-hm-EXD"/>
+                <constraint firstItem="0dr-ap-vXu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="WIg-yC-pZR"/>
+                <constraint firstAttribute="trailing" secondItem="mbq-Te-AJW" secondAttribute="trailing" id="gHp-8d-MhJ"/>
+                <constraint firstAttribute="trailing" secondItem="0dr-ap-vXu" secondAttribute="trailing" id="n9C-mE-Zaj"/>
+                <constraint firstItem="mbq-Te-AJW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="uln-Md-VOS"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="33.5" y="130.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Default-background" width="570" height="108"/>
+        <image name="twitter-avatar" width="400" height="400"/>
+    </resources>
+</document>
