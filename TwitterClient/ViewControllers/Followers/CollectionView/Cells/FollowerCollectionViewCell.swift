@@ -17,7 +17,7 @@ class FollowerCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        round(withRadius: 10)
+        round(withRadius: 2, borderWidth: 0.2, borderColor: .grayBorder)
         profileImageView.round(withRadius: 10)
     }
     

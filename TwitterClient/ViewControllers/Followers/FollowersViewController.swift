@@ -53,6 +53,7 @@ class FollowersViewController: UIViewController {
     private func configureCollectionView() {
         registerCollectionViewCells()
         addRefreshControl()
+        followersCollectionView.backgroundColor = .extraLightGray
     }
     
     private func prepareNavigationItems() {
