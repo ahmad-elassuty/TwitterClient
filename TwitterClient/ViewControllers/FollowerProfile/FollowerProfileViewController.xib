@@ -22,13 +22,17 @@
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0dr-ap-vXu">
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="y0R-eZ-jr4"/>
+                        <outlet property="delegate" destination="-1" id="PLB-Tj-NtP"/>
+                    </connections>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mbq-Te-AJW" customClass="FollowerProfileHeaderView" customModule="TwitterClient" customModuleProvider="target">
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LLF-Xk-Erg">
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LLF-Xk-Erg">
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Default-background" translatesAutoresizingMaskIntoConstraints="NO" id="RGQ-qD-xVD"/>
-                                <view alpha="0.40000000596046448" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NMI-t8-495">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Default-background" translatesAutoresizingMaskIntoConstraints="NO" id="RGQ-qD-xVD"/>
+                                <view clipsSubviews="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NMI-t8-495">
                                     <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 </view>
                             </subviews>
@@ -80,8 +84,14 @@
                         <constraint firstItem="yEk-Rp-gtF" firstAttribute="leading" secondItem="mbq-Te-AJW" secondAttribute="leading" id="xhD-KL-pqk"/>
                         <constraint firstItem="LLF-Xk-Erg" firstAttribute="leading" secondItem="mbq-Te-AJW" secondAttribute="leading" id="xw6-g3-FMg"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="minHeight">
+                            <real key="value" value="80"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="backgroundImageView" destination="RGQ-qD-xVD" id="hqn-ia-gJN"/>
+                        <outlet property="backgroundOverlay" destination="NMI-t8-495" id="J88-Gb-zDr"/>
                         <outlet property="profileImageView" destination="wQY-uk-OLo" id="lzt-xf-449"/>
                         <outlet property="profileNameLabel" destination="4aK-hp-gta" id="1qA-Eu-223"/>
                     </connections>

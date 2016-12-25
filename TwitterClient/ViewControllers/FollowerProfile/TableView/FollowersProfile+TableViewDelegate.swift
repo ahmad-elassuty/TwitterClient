@@ -11,7 +11,11 @@ import UIKit
 extension FollowerProfileViewController: UITableViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
+        let yOffset = scrollView.contentOffset.y
+        if yOffset < 0 {
+            let offset = abs(yOffset)
+            headerViewHeightConstraint.constant = max(offset, headerView.minHeight)
+        }
     }
     
 }
