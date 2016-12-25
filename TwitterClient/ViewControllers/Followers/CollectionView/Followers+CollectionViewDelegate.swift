@@ -16,16 +16,15 @@ extension FollowersViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // Calculate the height of the bio
-        let layout  = collectionViewLayout as! UICollectionViewFlowLayout
-        var width   = collectionView.bounds.width - layout.sectionInset.left - layout.sectionInset.right
+        let layout      = collectionViewLayout as! UICollectionViewFlowLayout
+        let leftInset   = layout.sectionInset.left
+        let rightInset  = layout.sectionInset.right
+        var width       = collectionView.bounds.width - leftInset - rightInset
         
-        
-        UIDevice.current.beginGeneratingDeviceOrientationNotifications()
-        if UIDevice.current.orientation.isLandscape {
+        if collectionView.bounds.width > collectionView.bounds.height {
             width /= 2
             width -= layout.minimumInteritemSpacing
         }
-        UIDevice.current.endGeneratingDeviceOrientationNotifications()
         
         let height  = FollowerCollectionViewCell.heightThatFits(user: dataSource[indexPath.item], width: width)
         return CGSize(width: width, height: height)
