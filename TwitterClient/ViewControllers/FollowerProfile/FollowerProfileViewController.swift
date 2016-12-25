@@ -38,6 +38,10 @@ class FollowerProfileViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     // MARK: Private Methods
     private func configureTableView() {
         tweetsTableView.contentInset = UIEdgeInsets(top: headerViewHeight, left: 8, bottom: 10, right: 8)
