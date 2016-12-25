@@ -57,12 +57,9 @@ class LogInViewController: UIViewController {
             
             // Persist the account
             let newAccount = Account(twtrUser: user)
-            do {
-                try newAccount.save(update: true)
-            } catch let error {
-                print(error.localizedDescription)
-                self?.onFailure("Error")
-                return
+            let realm = try? Realm()
+            try? realm?.write {
+                realm?.add(newAccount, update: true)
             }
             newAccount.isCurrentAccount = true
             

@@ -14,7 +14,7 @@ extension UIImageView {
     func loadFrom(urlString: String) {
         let imageURL = URL(string: urlString)
         kf.indicatorType = .activity
-        kf.setImage(with: imageURL, options: [.transition(.fade(0.2))])
+        kf.setImage(with: imageURL, placeholder: image, options: [.transition(.fade(0.2))])
     }
     
 }

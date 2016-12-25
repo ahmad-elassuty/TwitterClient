@@ -52,7 +52,7 @@ class FollowersViewController: UIViewController {
     }
     
     // MARK: Private Methods
-    @objc private func accountSettings() {
+    @objc private func switchAccounts() {
     }
     
     private func configureCollectionView() {
@@ -68,7 +68,7 @@ class FollowersViewController: UIViewController {
         
         // Left Item
         let image = UIImage(named: "menu")!.withRenderingMode(.alwaysOriginal)
-        let leftBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(accountSettings))
+        let leftBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(switchAccounts))
         navigationItem.leftBarButtonItem = leftBarButtonItem
     }
     
