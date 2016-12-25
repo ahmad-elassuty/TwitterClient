@@ -40,7 +40,9 @@ class FollowersViewController: UIViewController {
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         coordinator.animate(alongsideTransition: { [weak self] context in
-            self?.followersCollectionView.collectionViewLayout.invalidateLayout()
+            self?.followersCollectionView.performBatchUpdates({
+                self?.followersCollectionView.collectionViewLayout.invalidateLayout()
+                }, completion: nil)
             }, completion: nil)
     }
     
