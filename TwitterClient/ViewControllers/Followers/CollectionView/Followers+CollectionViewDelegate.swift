@@ -19,13 +19,22 @@ extension FollowersViewController: UICollectionViewDelegateFlowLayout {
         let layout  = collectionViewLayout as! UICollectionViewFlowLayout
         var width   = collectionView.bounds.width - layout.sectionInset.left - layout.sectionInset.right
         
+        
+        UIDevice.current.beginGeneratingDeviceOrientationNotifications()
         if UIDevice.current.orientation.isLandscape {
             width /= 2
             width -= layout.minimumInteritemSpacing
         }
+        UIDevice.current.endGeneratingDeviceOrientationNotifications()
         
         let height  = FollowerCollectionViewCell.heightThatFits(user: dataSource[indexPath.item], width: width)
         return CGSize(width: width, height: height)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.bounds.maxY == scrollView.contentSize.height {
+            dataSource.loadNextFollowersPageIfPossible()
+        }
     }
     
 }
