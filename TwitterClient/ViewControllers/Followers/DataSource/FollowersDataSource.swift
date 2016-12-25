@@ -16,7 +16,7 @@ class FollowersDataSource {
     private var account             : Account!
     private var data                : List<User>!
     private var nextCursor          : String!
-    private var notificationToken   : NotificationToken!
+    private var notificationToken   : NotificationToken?
     
     private(set) var isFetching     : Bool               = false
     
@@ -26,6 +26,10 @@ class FollowersDataSource {
     
     init(account: Account) {
         set(account: account)
+    }
+    
+    deinit {
+        notificationToken?.stop()
     }
     
     func set(account: Account) {
@@ -57,14 +61,14 @@ class FollowersDataSource {
             return
         }
         fetchFromTwitter(cursor: nextCursor) { [weak self] followers in
-            self?.account.createOrUpdate(followers: followers)
+            self?.account.append(followers: followers)
         }
     }
     
     private func fetchFromTwitter(cursor: String = "-1", completion: @escaping ([User]) -> ()) {
-        let userID = account.id
         isFetching = true
         
+        let userID = account.id
         let client = TWTRAPIClient(userID: userID)
         client.loadFollowers(ofUserWithID: userID, cursor: cursor) { [weak self] followers, nextCursor, error in
             defer {

@@ -33,15 +33,19 @@ class Account: Object {
         return ["isCurrentAccount", "followersNextCursor"]
     }
     
+    // MARK: Methods
     func replaceFollowers(with followers: [User]) {
         let realm = try? Realm()
         try? realm?.write {
             realm?.delete(self.followers)
-            self.followers.append(objectsIn: followers)
         }
+        // We should always check if the users are
+        // already in the database in case two accounts shares
+        // same user as a follower
+        append(followers: followers)
     }
     
-    func createOrUpdate(followers: [User]) {
+    func append(followers: [User]) {
         let realm = try? Realm()
         try? realm?.write {
             realm?.add(followers, update: true)
@@ -49,6 +53,28 @@ class Account: Object {
                 self.followers.append(follower)
             }
         }
+    }
+    
+    // MARK: Static Methods
+    static func createOrUpdate(twtrUser: TWTRUser) -> Account {
+        let newAccount = Account(twtrUser: twtrUser)
+        let realm = try? Realm()
+        
+        // We should not invalidate the cached followers
+        // on Account update
+        guard let existingAccount = Account.find(id: newAccount.id) else {
+            try? realm?.write {
+                realm?.add(newAccount)
+            }
+            return newAccount
+        }
+        
+        // Update the account info except the followers
+        let values = newAccount.dictionaryWithValues(forKeys: ["id", "name", "screenName", "profileImageURL"])
+        try? realm?.write {
+            realm?.create(Account.self, value: values, update: true)
+        }
+        return existingAccount
     }
     
 }

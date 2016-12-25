@@ -15,6 +15,9 @@
 		20AA85671E10026C00A36429 /* TimelineDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AA85661E10026C00A36429 /* TimelineDataSource.swift */; };
 		20AA85691E10094D00A36429 /* TimelineDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AA85681E10094D00A36429 /* TimelineDataSourceDelegate.swift */; };
 		20B0068B1E100DA8002D29C8 /* FollowerProfile+TimelineDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B0068A1E100DA8002D29C8 /* FollowerProfile+TimelineDataSourceDelegate.swift */; };
+		20B006961E10558B002D29C8 /* Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B006951E10558B002D29C8 /* Authenticator.swift */; };
+		20B006981E10588F002D29C8 /* LogIn+Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B006971E10588E002D29C8 /* LogIn+Authenticator.swift */; };
+		20B0069A1E1058CF002D29C8 /* Followers+Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B006991E1058CF002D29C8 /* Followers+Authenticator.swift */; };
 		20B869FB1E0D7C74001300C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B869FA1E0D7C74001300C9 /* AppDelegate.swift */; };
 		20B86A021E0D7C74001300C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20B86A011E0D7C74001300C9 /* Assets.xcassets */; };
 		20B86A051E0D7C74001300C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B86A031E0D7C74001300C9 /* LaunchScreen.storyboard */; };
@@ -55,6 +58,9 @@
 		20AA85661E10026C00A36429 /* TimelineDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineDataSource.swift; sourceTree = "<group>"; };
 		20AA85681E10094D00A36429 /* TimelineDataSourceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineDataSourceDelegate.swift; sourceTree = "<group>"; };
 		20B0068A1E100DA8002D29C8 /* FollowerProfile+TimelineDataSourceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FollowerProfile+TimelineDataSourceDelegate.swift"; sourceTree = "<group>"; };
+		20B006951E10558B002D29C8 /* Authenticator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authenticator.swift; sourceTree = "<group>"; };
+		20B006971E10588E002D29C8 /* LogIn+Authenticator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "LogIn+Authenticator.swift"; path = "TwitterClient/ViewControllers/LogIn/LogIn+Authenticator.swift"; sourceTree = SOURCE_ROOT; };
+		20B006991E1058CF002D29C8 /* Followers+Authenticator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Followers+Authenticator.swift"; sourceTree = "<group>"; };
 		20B869F71E0D7C74001300C9 /* TwitterClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20B869FA1E0D7C74001300C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20B86A011E0D7C74001300C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -187,6 +193,7 @@
 			children = (
 				20B86A111E0D81C2001300C9 /* LogInViewController.swift */,
 				20B86A121E0D81C2001300C9 /* LogInViewController.xib */,
+				20B006971E10588E002D29C8 /* LogIn+Authenticator.swift */,
 			);
 			name = LogIn;
 			path = Login;
@@ -201,6 +208,7 @@
 				20B86A161E0D9299001300C9 /* FollowersViewController.swift */,
 				20B86A171E0D9299001300C9 /* FollowersViewController.xib */,
 				20B86A541E0F1211001300C9 /* Followers+FollowersDataSourceDelegate.swift */,
+				20B006991E1058CF002D29C8 /* Followers+Authenticator.swift */,
 			);
 			path = Followers;
 			sourceTree = "<group>";
@@ -261,6 +269,7 @@
 				20B86A3E1E0EC683001300C9 /* HttpMethod.swift */,
 				20B86A401E0EC70F001300C9 /* TwitterRouter.swift */,
 				20B86A561E0F14C4001300C9 /* SizeCalculator.swift */,
+				20B006951E10558B002D29C8 /* Authenticator.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -438,9 +447,12 @@
 				20B86A551E0F1211001300C9 /* Followers+FollowersDataSourceDelegate.swift in Sources */,
 				20B86A381E0EC23E001300C9 /* Followers+CollectionViewDelegate.swift in Sources */,
 				20B0068B1E100DA8002D29C8 /* FollowerProfile+TimelineDataSourceDelegate.swift in Sources */,
+				20B006961E10558B002D29C8 /* Authenticator.swift in Sources */,
 				20B86A411E0EC70F001300C9 /* TwitterRouter.swift in Sources */,
+				20B006981E10588F002D29C8 /* LogIn+Authenticator.swift in Sources */,
 				20B86A181E0D9299001300C9 /* FollowersViewController.swift in Sources */,
 				20B86A201E0E997F001300C9 /* AccountInfoNavigationTitleView.swift in Sources */,
+				20B0069A1E1058CF002D29C8 /* Followers+Authenticator.swift in Sources */,
 				20B86A3A1E0EC25C001300C9 /* Followers+CollectionViewDataSource.swift in Sources */,
 				20B86A3F1E0EC683001300C9 /* HttpMethod.swift in Sources */,
 				20AA85671E10026C00A36429 /* TimelineDataSource.swift in Sources */,

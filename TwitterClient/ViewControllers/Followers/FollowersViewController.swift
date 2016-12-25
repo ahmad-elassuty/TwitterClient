@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TwitterKit
 import RealmSwift
 
 class FollowersViewController: UIViewController {
@@ -51,8 +52,19 @@ class FollowersViewController: UIViewController {
             }, completion: nil)
     }
     
+    // MARK: Methods
+    func enableLeftBarButton() {
+        navigationItem.leftBarButtonItem?.isEnabled = true
+    }
+    
+    func disableLeftBarButton() {
+        navigationItem.leftBarButtonItem?.isEnabled = false
+    }
+    
     // MARK: Private Methods
     @objc private func switchAccounts() {
+        disableLeftBarButton()
+        Twitter.sharedInstance().logIn(completion: logInCompletion)
     }
     
     private func configureCollectionView() {

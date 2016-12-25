@@ -36,7 +36,7 @@ class TimelineDataSource {
     }
     
     // MARK: Methods
-    func reloadTimelineIfPossible() {
+    func reloadIfPossible() {
         let client = TWTRAPIClient(userID: Account.current!.id)
         client.loadTimeline(ofUserWithID: user.id) { [weak self] (timeline, error) in
             guard let `self` = self else {
