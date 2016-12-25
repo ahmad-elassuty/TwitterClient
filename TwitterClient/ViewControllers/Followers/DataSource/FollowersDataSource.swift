@@ -18,7 +18,7 @@ class FollowersDataSource {
     private var nextCursor          : String?
     private var notificationToken   : NotificationToken!
     
-    private var fetching            : Bool               = false
+    private(set) var isFetching     : Bool               = false
     
     var numberOfFollowers: Int {
         return data.count
@@ -29,9 +29,9 @@ class FollowersDataSource {
     }
     
     func set(account: Account) {
-        self.account    = account
-        data            = account.followers
-        notificationToken = data.addNotificationBlock { [weak self] changes in
+        self.account        = account
+        data                = account.followers
+        notificationToken   = data.addNotificationBlock { [weak self] changes in
             switch changes {
             case .error(let error):
                 self?.delegate?.dataSource(error: error)
@@ -46,13 +46,13 @@ class FollowersDataSource {
         return data[index]
     }
     
-    func reloadFollowersIfPossible() {
+    func reloadIfPossible() {
         fetchFromTwitter { [weak self] followers in
             self?.account.replaceFollowers(with: followers)
         }
     }
     
-    func loadNextFollowersPageIfPossible() {
+    func loadNextPageIfPossible() {
         guard let nextCursor = nextCursor, nextCursor != "0" else {
             return
         }
@@ -63,11 +63,12 @@ class FollowersDataSource {
     
     private func fetchFromTwitter(cursor: String = "-1", completion: @escaping ([User]) -> ()) {
         let userID = account.id
+        isFetching = true
+        
         let client = TWTRAPIClient(userID: userID)
-        fetching = true
-        client.followers(ofUserWithID: userID, limit: 6, nextCursor: cursor) { [weak self] followers, nextCursor, error in
+        client.loadFollowers(ofUserWithID: userID, count: "6", cursor: cursor) { [weak self] followers, nextCursor, error in
             defer {
-                self?.fetching = false
+                self?.isFetching = false
             }
             
             guard let `self` = self else {
@@ -77,8 +78,8 @@ class FollowersDataSource {
             if let followers = followers {
                 completion(followers)
                 self.delegate?.dataSourceDidUpdate()
-                self.nextCursor = nextCursor!
-                self.account.followersNextCursor = nextCursor!
+                self.nextCursor                     = nextCursor!
+                self.account.followersNextCursor    = nextCursor!
                 return
             }
             

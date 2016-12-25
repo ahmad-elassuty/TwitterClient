@@ -19,8 +19,8 @@ extension FollowersViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cellIdentifier = String(describing: FollowerCollectionViewCell.self)
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! FollowerCollectionViewCell
+        let cellIdentifier  = String(describing: FollowerCollectionViewCell.self)
+        let cell            = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! FollowerCollectionViewCell
         cell.configure(withUser: dataSource[indexPath.item])
         
         UIView.performWithoutAnimation {

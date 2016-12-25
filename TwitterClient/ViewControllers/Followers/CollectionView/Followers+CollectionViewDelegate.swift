@@ -26,13 +26,13 @@ extension FollowersViewController: UICollectionViewDelegateFlowLayout {
             width -= layout.minimumInteritemSpacing
         }
         
-        let height  = FollowerCollectionViewCell.heightThatFits(user: dataSource[indexPath.item], width: width)
+        let height = FollowerCollectionViewCell.heightThatFits(user: dataSource[indexPath.item], width: width)
         return CGSize(width: width, height: height)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.bounds.maxY == scrollView.contentSize.height {
-            dataSource.loadNextFollowersPageIfPossible()
+            dataSource.loadNextPageIfPossible()
         }
     }
     

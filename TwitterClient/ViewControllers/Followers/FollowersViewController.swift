@@ -21,7 +21,7 @@ class FollowersViewController: UIViewController {
             navigationTitleView.configure(withAccount: currentAccount)
             dataSource = FollowersDataSource(account: currentAccount)
             dataSource.delegate = self
-            dataSource.reloadFollowersIfPossible()
+            dataSource.reloadIfPossible()
         }
     }
     
@@ -57,8 +57,8 @@ class FollowersViewController: UIViewController {
     
     private func prepareNavigationItems() {
         // Title View
-        navigationTitleView = AccountInfoNavigationTitleView.loadNib()
-        navigationItem.titleView = navigationTitleView
+        navigationTitleView         = AccountInfoNavigationTitleView.loadNib()
+        navigationItem.titleView    = navigationTitleView
         
         // Left Item
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(accountSettings))
@@ -80,7 +80,7 @@ class FollowersViewController: UIViewController {
     }
     
     @objc private func refresh() {
-        dataSource.reloadFollowersIfPossible()
+        dataSource.reloadIfPossible()
     }
     
 }
