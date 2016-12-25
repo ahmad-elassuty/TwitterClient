@@ -15,7 +15,7 @@ class FollowersDataSource {
     
     private var account             : Account!
     private var data                : List<User>!
-    private var nextCursor          : String?
+    private var nextCursor          : String!
     private var notificationToken   : NotificationToken!
     
     private(set) var isFetching     : Bool               = false

@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import TwitterKit
 
 extension FollowerProfileViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return TWTRTweetTableViewCell.height(for: dataSource[indexPath.item], style: .compact, width: tableView.bounds.width, showingActions: false)
+    }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let yOffset = scrollView.contentOffset.y

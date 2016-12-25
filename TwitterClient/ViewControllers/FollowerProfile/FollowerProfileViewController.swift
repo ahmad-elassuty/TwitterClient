@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TwitterKit
 
 class FollowerProfileViewController: UIViewController {
 
@@ -15,6 +16,7 @@ class FollowerProfileViewController: UIViewController {
     @IBOutlet weak var headerViewHeightConstraint   : NSLayoutConstraint!
     
     var follower: User!
+    var dataSource: TimelineDataSource!
     
     var headerViewHeight: CGFloat {
         return headerViewHeightConstraint.constant
@@ -32,6 +34,8 @@ class FollowerProfileViewController: UIViewController {
         
         headerView.configure(with: follower)
         configureTableView()
+        dataSource = TimelineDataSource(user: follower)
+        dataSource.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,6 +48,8 @@ class FollowerProfileViewController: UIViewController {
     
     // MARK: Private Methods
     private func configureTableView() {
-        tweetsTableView.contentInset = UIEdgeInsets(top: headerViewHeight, left: 8, bottom: 10, right: 8)
+        let cellIdentifier = String(describing: TWTRTweetTableViewCell.self)
+        tweetsTableView.register(TWTRTweetTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        tweetsTableView.contentInset = UIEdgeInsets(top: headerViewHeight, left: 0, bottom: 10, right: 0)
     }
 }

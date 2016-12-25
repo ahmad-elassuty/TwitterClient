@@ -16,12 +16,14 @@ extension FollowerProfileViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return dataSource.numberOfTweets
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TwitterCell")
-        return cell!
+        let cellIdentifier = String(describing: TWTRTweetTableViewCell.self)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! TWTRTweetTableViewCell
+        cell.configure(with: dataSource[indexPath.item])
+        return cell
     }
     
 }
