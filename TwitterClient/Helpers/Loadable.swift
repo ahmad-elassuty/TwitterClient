@@ -9,7 +9,6 @@
 import UIKit
 import NVActivityIndicatorView
 
-
 protocol Loadable: class {
     
     var loaderView: LoaderView? { get set }

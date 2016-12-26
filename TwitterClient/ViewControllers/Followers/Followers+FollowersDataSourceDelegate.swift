@@ -19,8 +19,6 @@ extension FollowersViewController: FollowersDataSourceDelegate {
     func dataSource(error: Error) {
         stopLoading()
         followersCollectionView.refreshControl?.endRefreshing()
-        print(error.localizedDescription)
-        print(error)
     }
     
 }

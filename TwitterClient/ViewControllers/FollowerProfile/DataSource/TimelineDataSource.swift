@@ -45,10 +45,7 @@ class TimelineDataSource {
         isFetching = true
         let client = TWTRAPIClient(userID: Account.current!.id)
         client.loadTimeline(ofUserWithID: user.id) { [weak self] (timeline, error) in
-            defer {
-                self?.isFetching = false
-            }
-            
+            self?.isFetching = false
             guard let `self` = self else {
                 return
             }

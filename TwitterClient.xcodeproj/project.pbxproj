@@ -48,6 +48,10 @@
 		20B86A571E0F14C4001300C9 /* SizeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B86A561E0F14C4001300C9 /* SizeCalculator.swift */; };
 		20EE9B881E1121AD00FE4C33 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EE9B871E1121AD00FE4C33 /* Loadable.swift */; };
 		20EE9B8F1E11514000FE4C33 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EE9B8E1E11514000FE4C33 /* LoaderView.swift */; };
+		20EE9B9A1E1167DA00FE4C33 /* EmptyColletionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EE9B981E1167DA00FE4C33 /* EmptyColletionViewCell.swift */; };
+		20EE9B9B1E1167DA00FE4C33 /* EmptyColletionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20EE9B991E1167DA00FE4C33 /* EmptyColletionViewCell.xib */; };
+		20EE9B9F1E116E2400FE4C33 /* EmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EE9B9D1E116E2400FE4C33 /* EmptyTableViewCell.swift */; };
+		20EE9BA01E116E2400FE4C33 /* EmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20EE9B9E1E116E2400FE4C33 /* EmptyTableViewCell.xib */; };
 		D03B0C58EDAC7C5A06AC4705 /* Pods_TwitterClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC92B38E69007DDA6E75CA8 /* Pods_TwitterClient.framework */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +100,10 @@
 		20B86A561E0F14C4001300C9 /* SizeCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeCalculator.swift; sourceTree = "<group>"; };
 		20EE9B871E1121AD00FE4C33 /* Loadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 		20EE9B8E1E11514000FE4C33 /* LoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		20EE9B981E1167DA00FE4C33 /* EmptyColletionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyColletionViewCell.swift; sourceTree = "<group>"; };
+		20EE9B991E1167DA00FE4C33 /* EmptyColletionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyColletionViewCell.xib; sourceTree = "<group>"; };
+		20EE9B9D1E116E2400FE4C33 /* EmptyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyTableViewCell.swift; sourceTree = "<group>"; };
+		20EE9B9E1E116E2400FE4C33 /* EmptyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyTableViewCell.xib; sourceTree = "<group>"; };
 		522717CC646EFDDAC69BD1D8 /* Pods-TwitterClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterClient/Pods-TwitterClient.release.xcconfig"; sourceTree = "<group>"; };
 		6C2DA51C9CA2E229BD962167 /* Pods-TwitterClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterClient/Pods-TwitterClient.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,6 +136,7 @@
 		20AA855A1E0FEC4300A36429 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				20EE9B9C1E116E0600FE4C33 /* Cells */,
 				20AA85601E0FF2D300A36429 /* FollowersProfile+TableViewDelegate.swift */,
 				20AA85621E0FF2F300A36429 /* FollowerProfile+TableViewDataSource.swift */,
 			);
@@ -234,6 +243,8 @@
 		20B86A1B1E0D9363001300C9 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				20EE9B981E1167DA00FE4C33 /* EmptyColletionViewCell.swift */,
+				20EE9B991E1167DA00FE4C33 /* EmptyColletionViewCell.xib */,
 				20B86A311E0EB952001300C9 /* FollowerCollectionViewCell.swift */,
 				20B86A321E0EB952001300C9 /* FollowerCollectionViewCell.xib */,
 			);
@@ -298,6 +309,15 @@
 				20EE9B8E1E11514000FE4C33 /* LoaderView.swift */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		20EE9B9C1E116E0600FE4C33 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				20EE9B9D1E116E2400FE4C33 /* EmptyTableViewCell.swift */,
+				20EE9B9E1E116E2400FE4C33 /* EmptyTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		5BC33C1EC91B371FC8B97FF6 /* Pods */ = {
@@ -381,12 +401,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20EE9BA01E116E2400FE4C33 /* EmptyTableViewCell.xib in Resources */,
 				20B86A341E0EB952001300C9 /* FollowerCollectionViewCell.xib in Resources */,
 				20B86A191E0D9299001300C9 /* FollowersViewController.xib in Resources */,
 				20B86A051E0D7C74001300C9 /* LaunchScreen.storyboard in Resources */,
 				20B86A021E0D7C74001300C9 /* Assets.xcassets in Resources */,
 				20AA85581E0FEA4700A36429 /* FollowerProfileViewController.xib in Resources */,
 				20B86A221E0E99A1001300C9 /* AccountInfoNavigationTitleView.xib in Resources */,
+				20EE9B9B1E1167DA00FE4C33 /* EmptyColletionViewCell.xib in Resources */,
 				20B86A141E0D81C2001300C9 /* LogInViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -469,6 +491,7 @@
 				20B006981E10588F002D29C8 /* LogIn+Authenticator.swift in Sources */,
 				20EE9B881E1121AD00FE4C33 /* Loadable.swift in Sources */,
 				20B86A181E0D9299001300C9 /* FollowersViewController.swift in Sources */,
+				20EE9B9A1E1167DA00FE4C33 /* EmptyColletionViewCell.swift in Sources */,
 				20B86A201E0E997F001300C9 /* AccountInfoNavigationTitleView.swift in Sources */,
 				20B0069A1E1058CF002D29C8 /* Followers+Authenticator.swift in Sources */,
 				20B86A3A1E0EC25C001300C9 /* Followers+CollectionViewDataSource.swift in Sources */,
@@ -487,6 +510,7 @@
 				20B86A2B1E0EAB55001300C9 /* UIColor+App.swift in Sources */,
 				20B86A131E0D81C2001300C9 /* LogInViewController.swift in Sources */,
 				20B86A331E0EB952001300C9 /* FollowerCollectionViewCell.swift in Sources */,
+				20EE9B9F1E116E2400FE4C33 /* EmptyTableViewCell.swift in Sources */,
 				20B86A301E0EB638001300C9 /* User.swift in Sources */,
 				20B869FB1E0D7C74001300C9 /* AppDelegate.swift in Sources */,
 				20AA85611E0FF2D300A36429 /* FollowersProfile+TableViewDelegate.swift in Sources */,

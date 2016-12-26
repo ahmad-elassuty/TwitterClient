@@ -111,7 +111,7 @@ class FollowersViewController: BaseViewController {
     }
     
     private func registerCollectionViewCells() {
-        let cells = [FollowerCollectionViewCell.self]
+        let cells: [Any] = [FollowerCollectionViewCell.self, EmptyColletionViewCell.self]
         cells.forEach { cell in
             let nibName = String(describing: cell)
             let nib     = UINib(nibName: nibName, bundle: nil)

@@ -12,6 +12,10 @@ import TwitterKit
 extension FollowerProfileViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if dataSource.isEmpty {
+            return tableView.bounds.height - headerViewHeight
+        }
+        
         return TWTRTweetTableViewCell.height(for: dataSource[indexPath.item], style: .compact, width: tableView.bounds.width, showingActions: false)
     }
     

@@ -17,7 +17,6 @@ extension FollowerProfileViewController: TimelineDataSourceDelegate {
     
     func dataSource(error: Error) {
         stopLoading()
-        print(error)
     }
     
 }

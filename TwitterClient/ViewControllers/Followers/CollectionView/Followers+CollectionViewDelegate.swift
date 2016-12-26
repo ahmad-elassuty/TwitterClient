@@ -10,12 +10,11 @@ import UIKit
 
 extension FollowersViewController: UICollectionViewDelegateFlowLayout {
     
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        return !dataSource.isEmpty && !dataSource.isFetching
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // Cancel cell selection if the followers list
-        // is going to be updated
-        guard !dataSource.isFetching else {
-            return
-        }
         let follower = dataSource[indexPath.item]
         let followerProfileViewController = FollowerProfileViewController(for: follower)
         present(followerProfileViewController, animated: true, completion: nil)
@@ -27,6 +26,10 @@ extension FollowersViewController: UICollectionViewDelegateFlowLayout {
         let leftInset   = layout.sectionInset.left
         let rightInset  = layout.sectionInset.right
         var width       = collectionView.bounds.width - leftInset - rightInset
+        
+        if dataSource.isEmpty {
+            return CGSize(width: width, height: 200)
+        }
         
         if collectionView.bounds.width > collectionView.bounds.height {
             width /= 2

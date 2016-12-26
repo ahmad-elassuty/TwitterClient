@@ -60,8 +60,13 @@ class FollowerProfileViewController: BaseViewController {
     
     // MARK: Private Methods
     private func configureTableView() {
-        let cellIdentifier = String(describing: TWTRTweetTableViewCell.self)
-        tweetsTableView.register(TWTRTweetTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         tweetsTableView.contentInset = UIEdgeInsets(top: headerViewHeight, left: 0, bottom: 10, right: 0)
+        
+        var cellIdentifier = String(describing: TWTRTweetTableViewCell.self)
+        tweetsTableView.register(TWTRTweetTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        
+        cellIdentifier  = String(describing: EmptyTableViewCell.self)
+        let nib         = UINib(nibName: cellIdentifier, bundle: nil)
+        tweetsTableView.register(nib, forCellReuseIdentifier: cellIdentifier)
     }
 }
