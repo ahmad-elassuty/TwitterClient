@@ -9,6 +9,7 @@
 import UIKit
 import TwitterKit
 import RealmSwift
+import Accounts
 
 class FollowersViewController: UIViewController {
     
@@ -63,8 +64,26 @@ class FollowersViewController: UIViewController {
     
     // MARK: Private Methods
     @objc private func switchAccounts() {
-        disableLeftBarButton()
-        Twitter.sharedInstance().logIn(completion: logInCompletion)
+        let accountStore = ACAccountStore()
+        let accountType  = accountStore.accountType(withAccountTypeIdentifier: ACAccountTypeIdentifierTwitter)
+        
+        guard let userGrantedAccess = accountType?.accessGranted, !userGrantedAccess else {
+            let numberOfAccounts = accountStore.accounts(with: accountType).count
+            if numberOfAccounts == 1 {
+                Twitter.sharedInstance().logIn(withMethods: .webBased, completion: logInCompletion)
+                return
+            }
+            
+            Twitter.sharedInstance().logIn(completion: logInCompletion)
+            return
+        }
+        
+        let alert = UIAlertController(title: "Grant Access",
+                                      message: "Please grant access to Twitter account settings.",
+                                      preferredStyle: .alert)
+        let closeAction = UIAlertAction(title: "Close", style: .default, handler: nil)
+        alert.addAction(closeAction)
+        present(alert, animated: true, completion: nil)
     }
     
     private func configureCollectionView() {
