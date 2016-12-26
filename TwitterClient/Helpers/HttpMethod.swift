@@ -8,8 +8,13 @@
 
 import Foundation
 
+/**
+ HTTP methods.
+ */
 enum HTTPMethod: String {
     case
     get     = "GET",
-    post    = "POST"
+    post    = "POST",
+    put     = "PUT",
+    delete  = "DELETE"
 }

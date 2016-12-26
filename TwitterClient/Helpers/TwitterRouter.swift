@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ TwitterRouter defines Twitter endpoints.
+ */
 struct TwitterRouter {
     
     private init() {}

@@ -9,14 +9,27 @@
 import RealmSwift
 import TwitterKit
 
+/**
+ Represents logged in user account.
+ 
+ This class persists logged user account details
+ and interfaces its followers.
+ */
 class Account: Object {
+    typealias Follower = User
     
     dynamic var id              = ""
     dynamic var screenName      = ""
     dynamic var profileImageURL = ""
     dynamic var name            = ""
-    let followers               = List<User>()
+    let followers               = List<Follower>()
     
+    /**
+     Initializes an Account from TwitterKit user class.
+        - Parameters:
+            - user
+                It will be serialized to Account object.
+     */
     convenience init(twtrUser user: TWTRUser) {
         self.init()
         id              = user.userID
@@ -25,6 +38,7 @@ class Account: Object {
         profileImageURL = user.profileImageLargeURL
     }
     
+    // MARK: Realm Overrides
     override static func primaryKey() -> String? {
         return "id"
     }
@@ -34,18 +48,32 @@ class Account: Object {
     }
     
     // MARK: Methods
-    func replaceFollowers(with followers: [User]) {
+    
+    /**
+     Replaces account followers with the given array.
+     - Parameters:
+        - followers:
+            Account followers.
+     */
+    func replaceFollowers(with followers: [Follower]) {
         let realm = try? Realm()
         try? realm?.write {
             realm?.delete(self.followers)
         }
+        
         // We should always check if the users are
         // already in the database in case two accounts shares
-        // same user as a follower
+        // same follower
         append(followers: followers)
     }
     
-    func append(followers: [User]) {
+    /**
+     Appends the given array of followers to the account.
+     - Parameters:
+        - followers:
+            Followers to append.
+     */
+    func append(followers: [Follower]) {
         let realm = try? Realm()
         try? realm?.write {
             realm?.add(followers, update: true)
@@ -56,6 +84,10 @@ class Account: Object {
     }
     
     // MARK: Static Methods
+    /**
+     Creates new account or updates existing account basic info
+     without invalidating the cached followers
+     */
     static func createOrUpdate(twtrUser: TWTRUser) -> Account {
         let newAccount = Account(twtrUser: twtrUser)
         let realm = try? Realm()

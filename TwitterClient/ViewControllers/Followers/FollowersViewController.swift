@@ -24,6 +24,7 @@ class FollowersViewController: BaseViewController {
             navigationTitleView.configure(withAccount: currentAccount)
             dataSource = FollowersDataSource(account: currentAccount)
             dataSource.delegate = self
+            followersCollectionView.reloadData()
             dataSource.reloadIfPossible()
         }
     }

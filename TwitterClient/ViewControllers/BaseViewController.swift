@@ -7,13 +7,25 @@
 //
 
 import UIKit
-import NVActivityIndicatorView
 
+/**
+ BaseViewController is the parent of all TwitterClient view controllers.
+ */
 class BaseViewController: UIViewController, Loadable {
-    
-    var loaderView  : LoaderView?
+    var loaderView  : UIView?
     
     // MARK: Methods
+    /**
+     Transitions between the caller view controller and the given view controller.
+     
+     This method will set the input view controller as the keyWindow rootViewController.
+
+     - Parameters:
+        - to:
+            This view controller will be the rootViewController.
+        - duration:
+            The duration of the transision animation.
+     */
     func transition(to viewController: UIViewController, duration: TimeInterval) {
         let window = UIApplication.shared.keyWindow
         UIView.transition(with: window!, duration: duration, options: [.transitionCrossDissolve], animations: {

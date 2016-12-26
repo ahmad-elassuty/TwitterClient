@@ -8,10 +8,24 @@
 
 import TTTAttributedLabel
 
+/**
+ SizeCalculator provides  
+ */
 struct SizeCalculator {
     
     private init() {}
     
+    /**
+     Calculates the height that fits the given text.
+     
+     - Parameters:
+        - text:
+            The text to calculate its height.
+        - maxWidth:
+            Maximum allowed width.
+        - font:
+            The text font.
+    */
     static func heightThatFits(text:String, maxWidth: CGFloat, font: UIFont) -> CGFloat {
         let constrainedSize = CGSize(width: maxWidth, height: CGFloat.greatestFiniteMagnitude)
         let style = NSMutableParagraphStyle()

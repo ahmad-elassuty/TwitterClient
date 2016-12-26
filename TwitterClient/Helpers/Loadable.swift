@@ -7,11 +7,13 @@
 //
 
 import UIKit
-import NVActivityIndicatorView
 
+/**
+ Loadable protocol handles starting/stopping UIBlocker loader.
+ */
 protocol Loadable: class {
     
-    var loaderView: LoaderView? { get set }
+    var loaderView: UIView? { get set }
     var isLoading: Bool { get }
     
     func startLoading()
@@ -19,6 +21,7 @@ protocol Loadable: class {
     
 }
 
+// Default implementation for Loadable protocol methods.
 extension Loadable where Self: UIViewController {
     
     var isLoading: Bool {

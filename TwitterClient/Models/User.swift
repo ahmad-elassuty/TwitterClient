@@ -9,6 +9,11 @@
 import ObjectMapper
 import RealmSwift
 
+/**
+ Represents any Twitter user.
+ 
+ This class persists Twitter user details and interfaces its timeline.
+ */
 class User: Object, Mappable {
     
     dynamic var id                              = ""

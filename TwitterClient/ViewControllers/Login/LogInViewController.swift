@@ -8,10 +8,13 @@
 
 import UIKit
 import TwitterKit
-import RealmSwift
 
+/**
+ LoginViewController handles the logIn screen logic.
+ */
 class LogInViewController: BaseViewController {
     
+    // Twitter LogIn Button
     @IBOutlet weak var logInButton: TWTRLogInButton!
     
     // MARK: Overrides

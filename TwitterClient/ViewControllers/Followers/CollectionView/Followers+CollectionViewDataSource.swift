@@ -15,7 +15,7 @@ extension FollowersViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if dataSource.isEmpty && !dataSource.isFetching {
+        if dataSource.isEmpty {
             return 1
         }
         
