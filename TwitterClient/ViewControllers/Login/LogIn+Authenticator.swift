@@ -48,7 +48,7 @@ extension LogInViewController: Authenticator {
             
             // Go to FollowersViewController
             let viewController = FollowersNavigationController(navigationBarClass: FollowersNavigationBar.self, toolbarClass: nil)
-            self?.transitionTo(viewController: viewController)
+            self?.transition(to: viewController, duration: 0.5)
         }
     }
     

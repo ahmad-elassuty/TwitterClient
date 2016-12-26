@@ -14,6 +14,7 @@ class TimelineDataSource {
     
     weak var delegate: TimelineDataSourceDelegate?
     
+    private(set) var isFetching : Bool = false
     private var user: User
     private var data: [TWTRTweet] {
         didSet {
@@ -23,6 +24,10 @@ class TimelineDataSource {
     
     var numberOfTweets: Int {
         return data.count
+    }
+    
+    var isEmpty: Bool {
+        return numberOfTweets == 0
     }
     
     init(user: User) {
@@ -37,8 +42,13 @@ class TimelineDataSource {
     
     // MARK: Methods
     func reloadIfPossible() {
+        isFetching = true
         let client = TWTRAPIClient(userID: Account.current!.id)
         client.loadTimeline(ofUserWithID: user.id) { [weak self] (timeline, error) in
+            defer {
+                self?.isFetching = false
+            }
+            
             guard let `self` = self else {
                 return
             }

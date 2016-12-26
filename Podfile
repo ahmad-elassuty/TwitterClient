@@ -9,5 +9,6 @@ target 'TwitterClient' do
   pod 'RealmSwift', '~> 2.0'
   pod 'Kingfisher', '~> 3.2'
   pod 'TTTAttributedLabel', '2.0.0'
+  pod 'NVActivityIndicatorView'
 
 end

@@ -18,6 +18,7 @@
 		20B006961E10558B002D29C8 /* Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B006951E10558B002D29C8 /* Authenticator.swift */; };
 		20B006981E10588F002D29C8 /* LogIn+Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B006971E10588E002D29C8 /* LogIn+Authenticator.swift */; };
 		20B0069A1E1058CF002D29C8 /* Followers+Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B006991E1058CF002D29C8 /* Followers+Authenticator.swift */; };
+		20B0069D1E10A5D5002D29C8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B0069C1E10A5D5002D29C8 /* BaseViewController.swift */; };
 		20B869FB1E0D7C74001300C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B869FA1E0D7C74001300C9 /* AppDelegate.swift */; };
 		20B86A021E0D7C74001300C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20B86A011E0D7C74001300C9 /* Assets.xcassets */; };
 		20B86A051E0D7C74001300C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B86A031E0D7C74001300C9 /* LaunchScreen.storyboard */; };
@@ -28,7 +29,7 @@
 		20B86A201E0E997F001300C9 /* AccountInfoNavigationTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B86A1F1E0E997F001300C9 /* AccountInfoNavigationTitleView.swift */; };
 		20B86A221E0E99A1001300C9 /* AccountInfoNavigationTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20B86A211E0E99A1001300C9 /* AccountInfoNavigationTitleView.xib */; };
 		20B86A241E0E9F0E001300C9 /* FollowersNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B86A231E0E9F0E001300C9 /* FollowersNavigationBar.swift */; };
-		20B86A271E0EA1C3001300C9 /* UIView+Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B86A261E0EA1C3001300C9 /* UIView+Round.swift */; };
+		20B86A271E0EA1C3001300C9 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B86A261E0EA1C3001300C9 /* UIView.swift */; };
 		20B86A291E0EA91E001300C9 /* FollowersNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B86A281E0EA91E001300C9 /* FollowersNavigationController.swift */; };
 		20B86A2B1E0EAB55001300C9 /* UIColor+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B86A2A1E0EAB55001300C9 /* UIColor+App.swift */; };
 		20B86A2E1E0EB4E9001300C9 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B86A2D1E0EB4E9001300C9 /* Account.swift */; };
@@ -45,6 +46,8 @@
 		20B86A511E0EF10B001300C9 /* FollowersDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B86A501E0EF10B001300C9 /* FollowersDataSourceDelegate.swift */; };
 		20B86A551E0F1211001300C9 /* Followers+FollowersDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B86A541E0F1211001300C9 /* Followers+FollowersDataSourceDelegate.swift */; };
 		20B86A571E0F14C4001300C9 /* SizeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B86A561E0F14C4001300C9 /* SizeCalculator.swift */; };
+		20EE9B881E1121AD00FE4C33 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EE9B871E1121AD00FE4C33 /* Loadable.swift */; };
+		20EE9B8F1E11514000FE4C33 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EE9B8E1E11514000FE4C33 /* LoaderView.swift */; };
 		D03B0C58EDAC7C5A06AC4705 /* Pods_TwitterClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC92B38E69007DDA6E75CA8 /* Pods_TwitterClient.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +64,7 @@
 		20B006951E10558B002D29C8 /* Authenticator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authenticator.swift; sourceTree = "<group>"; };
 		20B006971E10588E002D29C8 /* LogIn+Authenticator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "LogIn+Authenticator.swift"; path = "TwitterClient/ViewControllers/LogIn/LogIn+Authenticator.swift"; sourceTree = SOURCE_ROOT; };
 		20B006991E1058CF002D29C8 /* Followers+Authenticator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Followers+Authenticator.swift"; sourceTree = "<group>"; };
+		20B0069C1E10A5D5002D29C8 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		20B869F71E0D7C74001300C9 /* TwitterClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20B869FA1E0D7C74001300C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20B86A011E0D7C74001300C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -73,7 +77,7 @@
 		20B86A1F1E0E997F001300C9 /* AccountInfoNavigationTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountInfoNavigationTitleView.swift; sourceTree = "<group>"; };
 		20B86A211E0E99A1001300C9 /* AccountInfoNavigationTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountInfoNavigationTitleView.xib; sourceTree = "<group>"; };
 		20B86A231E0E9F0E001300C9 /* FollowersNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowersNavigationBar.swift; sourceTree = "<group>"; };
-		20B86A261E0EA1C3001300C9 /* UIView+Round.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Round.swift"; sourceTree = "<group>"; };
+		20B86A261E0EA1C3001300C9 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		20B86A281E0EA91E001300C9 /* FollowersNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowersNavigationController.swift; sourceTree = "<group>"; };
 		20B86A2A1E0EAB55001300C9 /* UIColor+App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+App.swift"; sourceTree = "<group>"; };
 		20B86A2D1E0EB4E9001300C9 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 		20B86A501E0EF10B001300C9 /* FollowersDataSourceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowersDataSourceDelegate.swift; sourceTree = "<group>"; };
 		20B86A541E0F1211001300C9 /* Followers+FollowersDataSourceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Followers+FollowersDataSourceDelegate.swift"; sourceTree = "<group>"; };
 		20B86A561E0F14C4001300C9 /* SizeCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeCalculator.swift; sourceTree = "<group>"; };
+		20EE9B871E1121AD00FE4C33 /* Loadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
+		20EE9B8E1E11514000FE4C33 /* LoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		522717CC646EFDDAC69BD1D8 /* Pods-TwitterClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterClient/Pods-TwitterClient.release.xcconfig"; sourceTree = "<group>"; };
 		6C2DA51C9CA2E229BD962167 /* Pods-TwitterClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterClient/Pods-TwitterClient.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -169,6 +175,7 @@
 				20B869FA1E0D7C74001300C9 /* AppDelegate.swift */,
 				20B86A011E0D7C74001300C9 /* Assets.xcassets */,
 				20B86A3D1E0EC66D001300C9 /* Helpers */,
+				20EE9B891E11374000FE4C33 /* CustomViews */,
 				20B86A2C1E0EB4C6001300C9 /* Models */,
 				20B86A251E0EA189001300C9 /* Extensions */,
 				20B86A0F1E0D8164001300C9 /* ViewControllers */,
@@ -181,6 +188,7 @@
 		20B86A0F1E0D8164001300C9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				20B0069C1E10A5D5002D29C8 /* BaseViewController.swift */,
 				20AA85541E0FE9E700A36429 /* FollowerProfile */,
 				20B86A151E0D9254001300C9 /* Followers */,
 				20B86A101E0D81A0001300C9 /* LogIn */,
@@ -246,7 +254,7 @@
 		20B86A251E0EA189001300C9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				20B86A261E0EA1C3001300C9 /* UIView+Round.swift */,
+				20B86A261E0EA1C3001300C9 /* UIView.swift */,
 				20B86A2A1E0EAB55001300C9 /* UIColor+App.swift */,
 				20B86A3B1E0EC645001300C9 /* TWTRAPIClient+Utils.swift */,
 				20B86A481E0EE12F001300C9 /* UIImageView+AsyncLoad.swift */,
@@ -270,6 +278,7 @@
 				20B86A401E0EC70F001300C9 /* TwitterRouter.swift */,
 				20B86A561E0F14C4001300C9 /* SizeCalculator.swift */,
 				20B006951E10558B002D29C8 /* Authenticator.swift */,
+				20EE9B871E1121AD00FE4C33 /* Loadable.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -281,6 +290,14 @@
 				20B86A501E0EF10B001300C9 /* FollowersDataSourceDelegate.swift */,
 			);
 			path = DataSource;
+			sourceTree = "<group>";
+		};
+		20EE9B891E11374000FE4C33 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				20EE9B8E1E11514000FE4C33 /* LoaderView.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		5BC33C1EC91B371FC8B97FF6 /* Pods */ = {
@@ -450,17 +467,19 @@
 				20B006961E10558B002D29C8 /* Authenticator.swift in Sources */,
 				20B86A411E0EC70F001300C9 /* TwitterRouter.swift in Sources */,
 				20B006981E10588F002D29C8 /* LogIn+Authenticator.swift in Sources */,
+				20EE9B881E1121AD00FE4C33 /* Loadable.swift in Sources */,
 				20B86A181E0D9299001300C9 /* FollowersViewController.swift in Sources */,
 				20B86A201E0E997F001300C9 /* AccountInfoNavigationTitleView.swift in Sources */,
 				20B0069A1E1058CF002D29C8 /* Followers+Authenticator.swift in Sources */,
 				20B86A3A1E0EC25C001300C9 /* Followers+CollectionViewDataSource.swift in Sources */,
 				20B86A3F1E0EC683001300C9 /* HttpMethod.swift in Sources */,
+				20B0069D1E10A5D5002D29C8 /* BaseViewController.swift in Sources */,
 				20AA85671E10026C00A36429 /* TimelineDataSource.swift in Sources */,
 				20B86A291E0EA91E001300C9 /* FollowersNavigationController.swift in Sources */,
 				20B86A4F1E0EF086001300C9 /* FollowersDataSource.swift in Sources */,
 				20AA85571E0FEA4700A36429 /* FollowerProfileViewController.swift in Sources */,
 				20B86A511E0EF10B001300C9 /* FollowersDataSourceDelegate.swift in Sources */,
-				20B86A271E0EA1C3001300C9 /* UIView+Round.swift in Sources */,
+				20B86A271E0EA1C3001300C9 /* UIView.swift in Sources */,
 				20B86A241E0E9F0E001300C9 /* FollowersNavigationBar.swift in Sources */,
 				20AA85691E10094D00A36429 /* TimelineDataSourceDelegate.swift in Sources */,
 				20AA85631E0FF2F300A36429 /* FollowerProfile+TableViewDataSource.swift in Sources */,
@@ -471,6 +490,7 @@
 				20B86A301E0EB638001300C9 /* User.swift in Sources */,
 				20B869FB1E0D7C74001300C9 /* AppDelegate.swift in Sources */,
 				20AA85611E0FF2D300A36429 /* FollowersProfile+TableViewDelegate.swift in Sources */,
+				20EE9B8F1E11514000FE4C33 /* LoaderView.swift in Sources */,
 				20B86A571E0F14C4001300C9 /* SizeCalculator.swift in Sources */,
 				20B86A491E0EE12F001300C9 /* UIImageView+AsyncLoad.swift in Sources */,
 			);

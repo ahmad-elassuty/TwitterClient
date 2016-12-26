@@ -11,11 +11,13 @@ import Foundation
 extension FollowersViewController: FollowersDataSourceDelegate {
     
     func dataSourceDidUpdate() {
+        stopLoading()
         followersCollectionView.refreshControl?.endRefreshing()
         followersCollectionView.reloadData()
     }
     
     func dataSource(error: Error) {
+        stopLoading()
         followersCollectionView.refreshControl?.endRefreshing()
         print(error.localizedDescription)
         print(error)

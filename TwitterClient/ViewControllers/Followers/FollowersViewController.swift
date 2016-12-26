@@ -10,8 +10,9 @@ import UIKit
 import TwitterKit
 import RealmSwift
 import Accounts
+import NVActivityIndicatorView
 
-class FollowersViewController: UIViewController {
+class FollowersViewController: BaseViewController {
     
     @IBOutlet weak var followersCollectionView: UICollectionView!
     
@@ -41,11 +42,19 @@ class FollowersViewController: UIViewController {
         followersCollectionView.collectionViewLayout.invalidateLayout()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if dataSource.isEmpty && dataSource.isFetching {
+            startLoading()
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
         coordinator.animate(alongsideTransition: { [weak self] context in
             self?.followersCollectionView.performBatchUpdates({
                 self?.followersCollectionView.collectionViewLayout.invalidateLayout()
@@ -61,20 +70,17 @@ class FollowersViewController: UIViewController {
     func disableLeftBarButton() {
         navigationItem.leftBarButtonItem?.isEnabled = false
     }
-    
-    // MARK: Private Methods
-    @objc private func switchAccounts() {
+
+    func switchAccounts() {
         let accountStore = ACAccountStore()
         let accountType  = accountStore.accountType(withAccountTypeIdentifier: ACAccountTypeIdentifierTwitter)
         
         guard let userGrantedAccess = accountType?.accessGranted, !userGrantedAccess else {
             let numberOfAccounts = accountStore.accounts(with: accountType).count
-            if numberOfAccounts == 1 {
-                Twitter.sharedInstance().logIn(withMethods: .webBased, completion: logInCompletion)
-                return
-            }
-            
-            Twitter.sharedInstance().logIn(completion: logInCompletion)
+            disableLeftBarButton()
+            startLoading()
+            let method: TWTRLoginMethod = numberOfAccounts == 1 ? .webBased : .systemAccounts
+            Twitter.sharedInstance().logIn(withMethods: method, completion: logInCompletion)
             return
         }
         
@@ -86,6 +92,7 @@ class FollowersViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    // MARK: Private Methods
     private func configureCollectionView() {
         registerCollectionViewCells()
         addRefreshControl()

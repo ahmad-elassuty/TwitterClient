@@ -11,10 +11,12 @@ import Foundation
 extension FollowerProfileViewController: TimelineDataSourceDelegate {
     
     func dataSourceDidUpdate() {
+        stopLoading()
         tweetsTableView.reloadData()
     }
     
     func dataSource(error: Error) {
+        stopLoading()
         print(error)
     }
     

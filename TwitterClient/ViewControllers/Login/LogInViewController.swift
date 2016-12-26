@@ -10,7 +10,7 @@ import UIKit
 import TwitterKit
 import RealmSwift
 
-class LogInViewController: UIViewController {
+class LogInViewController: BaseViewController {
     
     @IBOutlet weak var logInButton: TWTRLogInButton!
     

@@ -24,6 +24,10 @@ class FollowersDataSource {
         return data.count
     }
     
+    var isEmpty: Bool {
+        return numberOfFollowers == 0
+    }
+    
     init(account: Account) {
         set(account: account)
     }

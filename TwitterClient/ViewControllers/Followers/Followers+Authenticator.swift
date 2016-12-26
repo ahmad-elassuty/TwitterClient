@@ -13,16 +13,16 @@ import RealmSwift
 extension FollowersViewController: Authenticator {
     
     func authentication(failedWith error: Error) {
+        enableLeftBarButton()
+        stopLoading()
+        
         let alert = UIAlertController(title: "Error",
                                       message: error.localizedDescription,
                                       preferredStyle: .alert)
         let retryAction = UIAlertAction(title: "Retry", style: .default) { [weak self] _ in
-            guard let `self` = self else { return }
-            Twitter.sharedInstance().logIn(completion: self.logInCompletion)
+            self?.switchAccounts()
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive) { [weak self] _ in
-            self?.enableLeftBarButton()
-        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
         alert.addAction(cancelAction)
         alert.addAction(retryAction)
         present(alert, animated: true, completion: nil)
@@ -31,6 +31,7 @@ extension FollowersViewController: Authenticator {
     func authentication(succeededWith session: TWTRSession) {
         guard session.userID != Account.current!.id else {
             enableLeftBarButton()
+            stopLoading()
             return
         }
         
@@ -49,6 +50,7 @@ extension FollowersViewController: Authenticator {
             // Update the view
             self?.currentAccount = newAccount
             self?.enableLeftBarButton()
+            self?.stopLoading()
         }
     }
     

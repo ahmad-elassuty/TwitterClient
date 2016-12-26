@@ -9,7 +9,7 @@
 import UIKit
 import TwitterKit
 
-class FollowerProfileViewController: UIViewController {
+class FollowerProfileViewController: BaseViewController {
 
     @IBOutlet weak var tweetsTableView              : UITableView!
     @IBOutlet weak var headerView                   : FollowerProfileHeaderView!
@@ -40,6 +40,9 @@ class FollowerProfileViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         dataSource.reloadIfPossible()
+        if dataSource.isEmpty && dataSource.isFetching {
+            startLoading()
+        }
     }
 
     override func didReceiveMemoryWarning() {

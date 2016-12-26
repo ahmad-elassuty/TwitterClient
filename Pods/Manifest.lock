@@ -1,6 +1,7 @@
 PODS:
   - Fabric (1.6.11)
   - Kingfisher (3.2.0)
+  - NVActivityIndicatorView (3.0)
   - ObjectMapper (2.2.1)
   - Realm (2.0.3):
     - Realm/Headers (= 2.0.3)
@@ -16,6 +17,7 @@ PODS:
 DEPENDENCIES:
   - Fabric
   - Kingfisher (~> 3.2)
+  - NVActivityIndicatorView
   - ObjectMapper (~> 2.2)
   - RealmSwift (~> 2.0)
   - TTTAttributedLabel (= 2.0.0)
@@ -24,6 +26,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   Kingfisher: 50407d1d5dbc34965009d425a286342ff36a84ea
+  NVActivityIndicatorView: 81953b5e65093ba79edf4fe7268e002039ca5268
   ObjectMapper: 41e43e1a89f8060ef5ea5d04ba852e269a621d68
   Realm: 5f008bfe3c8c47142eddfc30b8c1584cde22db24
   RealmSwift: 5afb451f65b682242f272dbb52d5c6f6e343c980
@@ -31,6 +34,6 @@ SPEC CHECKSUMS:
   TwitterCore: 95c46af93112768a7983bd370d66023553601d01
   TwitterKit: dd8042698b0ff5bd3066fa919b3b2b50d8eed829
 
-PODFILE CHECKSUM: 9452459154e86af25e5346aed8a0cb269e338cbd
+PODFILE CHECKSUM: 107833ed083755e8c79ec4a2e648ea02a03e7714
 
 COCOAPODS: 1.1.0.rc.2
