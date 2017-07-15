@@ -1,6 +1,6 @@
-#TwitterClient-Eventtus Swift
+# TwitterClient-Eventtus Swift
 
-##Features
+## Features
 **TwitterClient** implements the following features:
 
 **General:**
@@ -38,7 +38,7 @@
 - Show recent 10 Tweets
 - Stretchy/Sticky Header
 
-##Screenshots
+## Screenshots
 ![TwitterClient-Eventtus Screenshot](https://s27.postimg.org/xlggbvn2r/Launch_Screen.png)
 ![TwitterClient-Eventtus Screenshot](https://s27.postimg.org/6owh3k49f/Login.png)
 ![TwitterClient-Eventtus Screenshot](https://s27.postimg.org/5nw8efn9v/Multi_Account.png)
@@ -49,12 +49,12 @@
 ![TwitterClient-Eventtus Screenshot](https://s27.postimg.org/heer9k5g3/Profile_View.png)
 ![TwitterClient-Eventtus Screenshot](https://s27.postimg.org/s8rlxqz6b/Landscape.png)
 
-##Requirements
+## Requirements
 
 - IPhone IOS 10+
 - Xcode 8+
 
-##Dependency Manager (CocoaPods)
+## Dependency Manager (CocoaPods)
 TwitterClient uses CocoaPods as a dependency manager. All pods are included in the repo so you do not need to reinstall the pods.
 
 Pod           | Usage
@@ -68,9 +68,9 @@ Pod           | Usage
 [**NVActivityIndicatorView**](https://github.com/ninjaprox/NVActivityIndicatorView)  | Nice animatable loaders.
 
 
-##Architecture
+## Architecture
 
-###Models:
+### Models:
 
 There are two main models which inherit from Realm `Object` class to persist data to the desk.
 
@@ -79,7 +79,7 @@ Name            | Usage
 Account       | Represents the logged-In user info. Constructed form `TWTRUser`
 User          | Represents any Twitter user. Currently used to represent a Follower Object. Mapped from Twitter JSON response using `ObjectMapper`.
 
-###Controllers:
+### Controllers:
 All view controllers inherits from `BaseViewController` to reuse common functionalities and keep the code **DRY**.
 
 - **LoginViewController** implements `Authenticator` protocol to handle Twitter log-in. 
@@ -98,14 +98,14 @@ All view controllers inherits from `BaseViewController` to reuse common function
 
 ---
 
-####Notes
+#### Notes
 - **Authenticator** does not handle Twitter response, instead it asks the conforming object to handle it. Hence, the conforming view controller can customize its view and handle the flow.
 
 - **User tweets** are stored in Realm as `NSData` to take advantage of using `TwitterKit` built-in table view cell that can be configured with `TWTRTweet` object. `TWTRTweet` object can serlialize Twitter JSON response and returns an array of `TWTRTweet`.
 
 ---
 
-##ToDo
+## ToDo
 
 - Offline Account Switching
 - Localization
